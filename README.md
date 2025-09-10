@@ -249,3 +249,35 @@ Trex Dijital Akıllı Üretim Sistemleri A.Ş
 </details>
 
 ## 8. Yazılım Geliştirme Prensipleri
+
+<details><summary>-	SOLID prensipleri: Her biri için kısa açıklama ve örnek</summary>
+
+</details>
+
+<details><summary>-	Design Patterns: Singleton, Repository, Factory</summary>
+
+</details>
+
+<details><summary>-	Clean Code nedir, neden önemlidir?</summary>
+
+</details>
+
+<details><summary>-	Yazılım Mimari Desenleri</summary>
+
+</details>
+
+<details><summary>-	Her SOLID prensibi için kısa örnek</summary>
+
+</details>
+
+<details><summary>-	En az 2 design pattern açıklaması</summary>
+
+</details>
+
+<details><summary>-	Clean Code uygulama örnekleri</summary>
+
+</details>
+
+<details><summary>-	Farklı yazılım mimarilerini karşılaştıran bir tablo veya kısa açıklamalar</summary>
+
+</details>
