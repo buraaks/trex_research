@@ -1,4 +1,3 @@
-## İçindekiler
 <p align="center">
 <a href="https://trex.com.tr/en/">
 <img src="https://trex.com.tr/assets/img/logo.png"
@@ -25,7 +24,8 @@ Trex Dijital Akıllı Üretim Sistemleri A.Ş
 - 8. [Yazılım Geliştirme Prensipleri](#8-yazılım-geliştirme-prensipleri)
 
 ## 1. Modern Yazılım Geliştirme Pratikleri 
-- Git nedir? GitHub nedir?
+<details>
+<summary>- Git nedir? GitHub nedir?</summary>
    - Git, yazılım projelerindeki tüm değişiklikleri kaydedip yönetmeye yarayan bir versiyon kontrol sistemi iken; GitHub, bu Git projelerini internet üzerinde depolamayı, paylaşmayı ve işbirliği yapmayı sağlayan bulut tabanlı bir platformdur.
 - 	Temel Git komutları
 
@@ -45,36 +45,207 @@ Trex Dijital Akıllı Üretim Sistemleri A.Ş
 
     **git merge [isim]** → Belirtilen dalı (branch) aktif dal ile birleştirir.
 
--	Merge conflict nedir, nasıl çözülür?
+</details>
+<details><summary>-	Merge conflict nedir, nasıl çözülür?</summary>
 
--	CI/CD nedir? Azure DevOps, GitHub Actions ile pipeline örnekleri
+</details>
+
+
+</details>
+<details><summary>-	CI/CD nedir? Azure DevOps, GitHub Actions ile pipeline örnekleri
+
+<details><summary>-	Software Development Life Cycle (SDLC)</summary>
+
+</details>
+
 ## 2. NET Ekosistemi
 
+<details><summary>-	.NET nedir? Tarihçesi, amacı, neden kullanılır?</summary>
+
+</details>
+
+<details><summary>-	.NET Framework, .NET Core ve .NET 7/8+ farkları</summary>
+
+</details>
+
+<details><summary>-	Platformlar arası çalışabilir mi? (Windows, Linux, macOS)</summary>
+
+</details>
+
+<details><summary>•	Senkron ve Asenkron Programlama</summary>
+
+</details>
 
 
 ## 3. Backend Geliştirme Temelleri
 
+<details><summary>-	Backend nedir? Frontend ile farkları</summary>
+
+</details>
+
+<details><summary>-	Web sunucusu nedir? API nedir? API türleri</summary>
+
+</details>
+
+<details><summary>-	HTTP nedir? HTTP metodları: GET, POST, PUT, DELETE</summary>
+
+</details>
+
+<details><summary>-	RESTful servislerin çalışma mantığı</summary>
+
+</details>
+
+<details><summary>-	JSON veri formatı ve kullanım amacı</summary>
+
+</details>
+
+<details><summary>-	SOAP ve GraphQL nedir, REST’ten farkları</summary>
+
+</details>
+
+<details><summary>-	HTTP metodlarını örneklerle açıklama</summary>
+
+</details>
+
+<details><summary>-	REST vs SOAP vs GraphQL temel karşılaştırması</summary>
+
+</details>
+
+<details><summary>-	JSON veri örneği açıklaması</summary>
+
+</details>
 
 ## 4. ASP.NET
+
+<details><summary>-	ASP.NET ve ASP.NET Core nedir? Avantajları, farkları</summary>
+
+</details>
+
+<details><summary>-	MVC nedir, ne için kullanılır?  </summary>
+
+</details>
+
+<details><summary>-	Middleware nedir, nasıl çalışır?</summary>
+
+</details>
+
+<details><summary>-	Dependency Injection (DI) nedir, neden önemlidir?</summary>
+
+</details>
+
+<details><summary>-	Katmanlı Mimari (Layered Architecture)</summary>
+
+</details>
+
+<details><summary>-	Clean Architecture</summary>
+
+</details>
 
 
 ## 5. Veritabanı ve ORM
 
+<details><summary>-	SQL nedir? </summary>
+
+</details>
+
+<details><summary>-	İlişkisel ve ilişkisel olmayan veri tabanları arasındaki farklar</summary>
+
+</details>
+
+<details><summary>-	ORM nedir? Entity Framework Core nedir?</summary>
+
+</details>
+
+<details><summary>-	DbContext nedir, nasıl kullanılır?</summary>
+
+</details>
+
+<details><summary>-	LINQ nedir? En çok kullanılan LINQ ifadeleri</summary>
+
+</details>
+
+<details><summary>-	Code-First ve Database-First yaklaşımı nedir?</summary>
+
+</details>
+
+<details><summary>-	Temel SQL sorguları: SELECT, INSERT, UPDATE, DELETE</summary>
+
+</details>
+
+<details><summary>-	LINQ örnekleri ve karşılık gelen SQL açıklamaları</summary>
+
+</details>
+
+<details><summary>- Code-First vs DB-First karşılaştırması</summary>
+
+</details>
+
+<details><summary>-	4 temel SQL sorgusuna örnek
+
+</summary>
+
+</details>
+
 
 ## 6. Güvenlik ve Performans 
+
+<details><summary>-	Authentication vs Authorization nedir?</summary>
+
+</details>
+
+<details><summary>-	Authentication vs Authorization nedir?</summary>
+
+</details>
+
+<details><summary>-	OAuth, OAuth2.0, OpenIddict, OpenID nedir? Aralarındaki </summary>
+
+</details>
+
+<details><summary>-	Performans artımı için ne yapılabilir? (AsNoTracking, IAsyncEnumerable, caching, profiling, redis)</summary>
+
+</details>
+
+<details><summary>-	Performans artımı için ne yapılabilir? (AsNoTracking, IAsyncEnumerable, caching, profiling, redis)</summary>
+
+</details>
+
+<details><summary>-	JWT yapısının temel bileşenleri</summary>
+
+</details>
+
+<details><summary>-	Performans için önerilen en az 3 teknik ve açıklamaları</summary>
+
+</details>
+
+<details><summary>-	OWASP 10 listesi ve her biri için 1–2 cümlelik açıklamalar</summary>
+
+</details>
 
 
 ## 7. Logging ve Hata Yönetimi
 
+<details><summary>-	Neden loglama yapılır? Log seviyesi nedir?</summary>
+
+</details>
+
+<details><summary>-	ASP.NET Core'da logging altyapısı</summary>
+
+</details>
+
+<details><summary>-	Global exception handling nasıl yapılır?</summary>
+
+</details>
+
+<details><summary>-	UseExceptionHandler ve ILogger nasıl kullanılır?</summary>
+
+</details>
+
+<details><summary>-	Log seviyelerinin açıklamaları (Information, Warning, Error vs.)</summary>
+
+</details>
+
+<details><summary>-	Örnek hata yönetim kodu açıklaması</summary>
+
+</details>
 
 ## 8. Yazılım Geliştirme Prensipleri
-
-ali was here 
---------
-4. kurulum
-5. kullanım
-6. özellikler
-7. katkıda bulunma
-8. destek ve iletişim 
-9. lisans
-10. tşk
