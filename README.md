@@ -14,7 +14,7 @@ Trex Dijital Akıllı Üretim Sistemleri A.Ş
 
 ## ARAŞTIRMA & RAPORLAMA ÖDEVİ (.NET)
 ## İçindekiler
-- 1. [Modern Yazılım Geliştirme Pratikleri](#Modern-Yazılım-Geliştirme-Pratikleri)
+- 1. [Modern Yazılım Geliştirme Pratikleri](#1-Modern-Yazılım-Geliştirme-Pratikleri)
 - 2. [.NET Ekosistemi](#2-net-ekosistemi)
 - 3. [Backend Geliştirme Temelleri](#3-backend-geliştirme-temelleri)
 - 4. [ASP.NET](#4-aspnet)
