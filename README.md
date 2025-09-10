@@ -14,7 +14,7 @@ Trex Dijital Akıllı Üretim Sistemleri A.Ş
 
 ## ARAŞTIRMA & RAPORLAMA ÖDEVİ (.NET)
 ## İçindekiler
-- 1. [Modern Yazılım Geliştirme Pratikleri](#1-Modern-Yazılım-Geliştirme-Pratikleri)
+- 1. [Modern Yazılım Geliştirme Pratikleri](#1-modern-yazılım-geliştirme-pratikleri)
 - 2. [.NET Ekosistemi](#2-net-ekosistemi)
 - 3. [Backend Geliştirme Temelleri](#3-backend-geliştirme-temelleri)
 - 4. [ASP.NET](#4-aspnet)
@@ -26,27 +26,30 @@ Trex Dijital Akıllı Üretim Sistemleri A.Ş
 ## 1. Modern Yazılım Geliştirme Pratikleri 
 <details>
 <summary>- Git nedir? GitHub nedir?</summary>
-   - Git, yazılım projelerindeki tüm değişiklikleri kaydedip yönetmeye yarayan bir versiyon kontrol sistemi iken; GitHub, bu Git projelerini internet üzerinde depolamayı, paylaşmayı ve işbirliği yapmayı sağlayan bulut tabanlı bir platformdur.
-- 	Temel Git komutları
+     Git, yazılım projelerindeki tüm değişiklikleri kaydedip yönetmeye yarayan bir versiyon kontrol sistemi iken; GitHub, bu Git projelerini internet üzerinde depolamayı, paylaşmayı ve işbirliği yapmayı sağlayan bulut tabanlı bir platformdur.
+ 	</details>
+<details><summary>Temel Git komutları</summary>
 
-    **git init** → Yeni bir Git deposu (proje) başlatır.
+**git init** → Yeni bir Git deposu (proje) başlatır.
 
-    **git clone [url]** →  Var olan bir uzak (remote) depoyu bilgisayarına kopyalar.
+**git clone [url]** →  Var olan bir uzak (remote) depoyu bilgisayarına kopyalar.
 
-    **git add [dosya]** → Dosyayı bir sonraki commit için hazırlık alanına (staging area) ekler.
+**git add [dosya]** → Dosyayı bir sonraki commit için hazırlık alanına (staging area) ekler.
 
-    **git commit -m "mesaj"** → Hazırlanan değişiklikleri kalıcı olarak kaydeder.
+**git commit -m "mesaj"** → Hazırlanan değişiklikleri kalıcı olarak kaydeder.
 
-    **git push** → Yerel (local) commitleri GitHub gibi uzak depoya gönderir.
+**git push** → Yerel (local) commitleri GitHub gibi uzak depoya gönderir.
 
-    **git pull** → Uzak depodaki son değişiklikleri bilgisayarına indirip birleştirir.
+**git pull** → Uzak depodaki son değişiklikleri bilgisayarına indirip birleştirir.
 
-    **git branch [isim]** → Yeni bir dal (branch) oluşturur.
+**git branch [isim]** → Yeni bir dal (branch) oluşturur.
 
-    **git merge [isim]** → Belirtilen dalı (branch) aktif dal ile birleştirir.
+**git merge [isim]** → Belirtilen dalı (branch) aktif dal ile birleştirir.
 
 </details>
 <details><summary>-	Merge conflict nedir, nasıl çözülür?</summary>
+
+Bir git dosyasında aynı yerde iki farklı değişiklğin olması sonucu hata verir
 
 </details>
 
@@ -250,6 +253,9 @@ Trex Dijital Akıllı Üretim Sistemleri A.Ş
 
 ## 8. Yazılım Geliştirme Prensipleri
 
+
+
+
 <details><summary>-	SOLID prensipleri: Her biri için kısa açıklama ve örnek</summary>
 
 </details>
@@ -281,3 +287,17 @@ Trex Dijital Akıllı Üretim Sistemleri A.Ş
 <details><summary>-	Farklı yazılım mimarilerini karşılaştıran bir tablo veya kısa açıklamalar</summary>
 
 </details>
+
+---
+
+<details><summary></summary>
+
+</details>
+
+
+6. özellikler
+
+8. destek ve iletişim 
+
+10. tşk
+
