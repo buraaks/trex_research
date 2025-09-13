@@ -28,7 +28,7 @@ Trex Dijital Akıllı Üretim Sistemleri A.Ş
 <summary>- Git nedir? GitHub nedir?</summary>
      Git, yazılım projelerindeki tüm değişiklikleri kaydedip yönetmeye yarayan bir versiyon kontrol sistemi iken; GitHub, bu Git projelerini internet üzerinde depolamayı, paylaşmayı ve işbirliği yapmayı sağlayan bulut tabanlı bir platformdur.
  	</details>
-<details><summary>Temel Git komutları</summary>
+<details><summary>- Temel Git komutları</summary>
 
 **git init** → Yeni bir Git deposu (proje) başlatır.
 
@@ -55,7 +55,13 @@ Bir git dosyasında aynı yerde iki farklı değişiklğin olması sonucu hata v
 
 
 </details>
-<details><summary>-	CI/CD nedir? Azure DevOps, GitHub Actions ile pipeline örnekleri
+<details><summary>-	CI/CD nedir? Azure DevOps, GitHub Actions ile pipeline örnekleri</summary>     
+
+**- CI (Continuous Integration / Sürekli Entegrasyon)**:** Geliştirilen kodun otomatik olarak test edikmesidir , hatanın daha kolay anlaşılmasını sağlar.
+
+**- CD (Continuous Delivery / Deployment / Sürekli Teslimat / Dağıtım):** Bir kod geliştirilirken yayınlanmasını sağlar. Yeni sürümleri daha hızlı yayınlanmasını sağlar.
+
+</details>
 
 <details><summary>-	Software Development Life Cycle (SDLC)</summary>
 
