@@ -11,18 +11,20 @@ Trex Dijital Akıllı Üretim Sistemleri A.Ş
 
 </p>
 
-
+***
 ## ARAŞTIRMA & RAPORLAMA ÖDEVİ (.NET)
+***
 ## İçindekiler
-- 1. [Modern Yazılım Geliştirme Pratikleri](#1-modern-yazılım-geliştirme-pratikleri)
-- 2. [.NET Ekosistemi](#2-net-ekosistemi)
-- 3. [Backend Geliştirme Temelleri](#3-backend-geliştirme-temelleri)
-- 4. [ASP.NET](#4-aspnet)
-- 5. [Veritabanı ve ORM](#5-veritabanı-ve-orm)
-- 6. [Güvenlik ve Performans](#6-güvenlik-ve-performans)
-- 7. [Logging ve Hata Yönetimi](#7-logging-ve-hata-yönetimi)
-- 8. [Yazılım Geliştirme Prensipleri](#8-yazılım-geliştirme-prensipleri)
-
+- 1 . [Modern Yazılım Geliştirme Pratikleri](#1-modern-yazılım-geliştirme-pratikleri)
+- 2 . [.NET Ekosistemi](#2-net-ekosistemi)
+- 3 . [Backend Geliştirme Temelleri](#3-backend-geliştirme-temelleri)
+- 4 . [ASP.NET](#4-aspnet)
+- 5 . [Veritabanı ve ORM](#5-veritabanı-ve-orm)
+- 6 . [Güvenlik ve Performans](#6-güvenlik-ve-performans)
+- 7 . [Logging ve Hata Yönetimi](#7-logging-ve-hata-yönetimi)
+- 8 . [Yazılım Geliştirme Prensipleri](#8-yazılım-geliştirme-prensipleri)
+***
+<a id="1-modern-yazılım-geliştirme-pratikleri"></a>
 ## 1. Modern Yazılım Geliştirme Pratikleri 
 <details>
 <summary>- Git nedir? GitHub nedir?</summary>
@@ -30,26 +32,28 @@ Trex Dijital Akıllı Üretim Sistemleri A.Ş
  	</details>
 <details><summary>- Temel Git komutları</summary>
 
-**git init** → Yeni bir Git deposu (proje) başlatır.
+`git init` → Yeni bir Git deposu (proje) başlatır.
 
-**git clone [url]** →  Var olan bir uzak (remote) depoyu bilgisayarına kopyalar.
+`git clone [url]` →  Var olan bir uzak (remote) depoyu bilgisayarına kopyalar.
 
-**git add [dosya]** → Dosyayı bir sonraki commit için hazırlık alanına (staging area) ekler.
+`git add [dosya]` → Dosyayı bir sonraki commit için hazırlık alanına (staging area) ekler.
 
-**git commit -m "mesaj"** → Hazırlanan değişiklikleri kalıcı olarak kaydeder.
+`git commit -m "mesaj"` → Hazırlanan değişiklikleri kalıcı olarak kaydeder.
 
-**git push** → Yerel (local) commitleri GitHub gibi uzak depoya gönderir.
+`git push` → Yerel (local) commitleri GitHub gibi uzak depoya gönderir.
 
-**git pull** → Uzak depodaki son değişiklikleri bilgisayarına indirip birleştirir.
+`git pull` → Uzak depodaki son değişiklikleri bilgisayarına indirip birleştirir.
 
-**git branch [isim]** → Yeni bir dal (branch) oluşturur.
+`git branch [isim]` → Yeni bir dal (branch) oluşturur.
 
-**git merge [isim]** → Belirtilen dalı (branch) aktif dal ile birleştirir.
+`git merge [isim]` → Belirtilen dalı (branch) aktif dal ile birleştirir.
 
 </details>
 <details><summary>-	Merge conflict nedir, nasıl çözülür?</summary>
 
-Bir git dosyasında aynı yerde iki farklı değişiklğin olması sonucu hata verir
+* Merge conflict, iki branch'ın 'merge'lenirken bir dosyanın aynı yerinde farklı değişiklikler yapılmış olmasından kaynaklanan 'merge'lenememe durumudur. Git, aynı yerde birbirinden farklı iki değişikliği nasıl ele alması gerektiğini bilemez ve hata verir. Dosyada çakışan bölge(ler),
+    * `<<<<<<<HEAD` ve `=======`
+* arasında gösterilir. Bu kısımda hangi versiyonun kabul edileceği yazılımcı tarafından manuel şekilde belirlenir ve ancak böyle 'merge' işlemi gerçekleşebilir.
 
 </details>
 
@@ -63,9 +67,29 @@ Bir git dosyasında aynı yerde iki farklı değişiklğin olması sonucu hata v
 
 </details>
 
-<details><summary>-	Software Development Life Cycle (SDLC)</summary>
+<details><summary>-	Software Development Life Cycle (SDLC)</summary> 
+
+ **-Yazılım Geliştirme Yaşam Döngüsü (SDLC)**: Bir yazılım fikirden gerçeğe geçişine kadar geçen süredir.
+
+**o	Aşamalar**
+1. Planlama:	Projenin amacı, kapsamı, zaman ve maliyet tahminleri yapılır.
+2. Analiz:	Gereksinimler toplanır, sistem gereksinimleri belirlenir (ne yapılacak?).
+3. Geliştirme:	Yazılım tasarlanır ve kodlanır.
+4. Test:	Yazılım hatalara karşı test edilir, doğruluk ve kalite kontrolü yapılır.
+5. Dağıtım:	Testleri geçen ürün üretim ortamına (kullanıcılara) sunulur.
+6. Bakım:	Canlı sistemde hata düzeltme, iyileştirme ve güncellemeler yapılır.
+
+**o	Agile/Scrum/Kanban metodolojileri**
+
+ * Agile: Yazılımı küçük parçalara bölerek hızlı ve esnek şekilde geliştirmeyi amaçlayan yaklaşım.
+
+ * Scrum: Agile içinde, işleri sabit süreli sprint’lere ayırarak ekip çalışmasını yöneten bir çerçeve.
+
+ * Kanban: İşlerin görsel bir panoda sürekli akışla yönetildiği, esnek bir Agile yöntemi.
 
 </details>
+
+***
 
 ## 2. NET Ekosistemi
 
@@ -85,7 +109,7 @@ Bir git dosyasında aynı yerde iki farklı değişiklğin olması sonucu hata v
 
 </details>
 
-
+***
 ## 3. Backend Geliştirme Temelleri
 
 <details><summary>-	Backend nedir? Frontend ile farkları</summary>
@@ -124,6 +148,7 @@ Bir git dosyasında aynı yerde iki farklı değişiklğin olması sonucu hata v
 
 </details>
 
+***
 ## 4. ASP.NET
 
 <details><summary>-	ASP.NET ve ASP.NET Core nedir? Avantajları, farkları</summary>
@@ -150,7 +175,7 @@ Bir git dosyasında aynı yerde iki farklı değişiklğin olması sonucu hata v
 
 </details>
 
-
+***
 ## 5. Veritabanı ve ORM
 
 <details><summary>-	SQL nedir? </summary>
@@ -195,7 +220,7 @@ Bir git dosyasında aynı yerde iki farklı değişiklğin olması sonucu hata v
 
 </details>
 
-
+***
 ## 6. Güvenlik ve Performans 
 
 <details><summary>-	Authentication vs Authorization nedir?</summary>
@@ -230,7 +255,7 @@ Bir git dosyasında aynı yerde iki farklı değişiklğin olması sonucu hata v
 
 </details>
 
-
+***
 ## 7. Logging ve Hata Yönetimi
 
 <details><summary>-	Neden loglama yapılır? Log seviyesi nedir?</summary>
@@ -257,6 +282,8 @@ Bir git dosyasında aynı yerde iki farklı değişiklğin olması sonucu hata v
 
 </details>
 
+
+***
 ## 8. Yazılım Geliştirme Prensipleri
 
 
