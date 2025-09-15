@@ -179,23 +179,58 @@ o Web Sunucusu Nedir?
 
  * Örnek Web Sunucuları:
 
-  -Apache
+    -Apache
 
-  -Nginx
+    -Nginx
 
-  -Microsoft IIS
+    -Microsoft IIS
 
 * Görevleri:
-* 
--İstemciden gelen HTTP/HTTPS isteklerini dinlemek
 
--İlgili dosyaları (HTML, CSS, JS) sunmak
+   -İstemciden gelen HTTP/HTTPS isteklerini dinlemek
 
--Dinamik içerik için backend uygulamalarla iletişim kurmak
+   -İlgili dosyaları (HTML, CSS, JS) sunmak
 
+   -Dinamik içerik için backend uygulamalarla iletişim kurmak
+
+o API Nedir?
+
+ API (Application Programming Interface), iki yazılımın birbiriyle standartlaştırılmış bir şekilde iletişim kurmasını sağlayan arayüzdür. Bir nevi yazılımlar arası “protokol” gibi düşünebilirsin.
+
+ Gerçek Hayat Analojisi: Bir restoranda garson (API), senin siparişini mutfağa (sunucu) iletir ve yemeği sana getirir.
+
+* Kullanım Alanları:
+
+    -Mobil uygulamaların sunucudan veri çekmesi
+
+    -Web sitelerinin harici servislerle (ödeme, harita, hava durumu) entegrasyonu
+
+    -Mikroservis mimarilerinde servisler arası iletişim
 </details>
 
 <details><summary>-	HTTP nedir? HTTP metodları: GET, POST, PUT, DELETE</summary>
+
+o HTTP Nedir?
+
+HTTP (Hypertext Transfer Protocol), web tarayıcıları ile sunucular arasında veri alışverişini sağlayan bir iletişim protokolüdür. İnternet üzerindeki sayfaların yüklenmesi, veri gönderimi ve alınması gibi işlemler HTTP üzerinden gerçekleşir.
+
+- İstemci (Client): Genellikle bir web tarayıcısıdır.
+
+- Sunucu (Server): İstemciden gelen isteklere yanıt veren sistemdir.
+
+HTTP, metin tabanlı bir protokoldür ve genellikle TCP/IP üzerinden çalışır.
+
+* HTTP Metodları
+
+  -HTTP protokolü, istemcinin sunucuya ne tür bir işlem yapmak istediğini   belirtmek için çeşitli metodlar kullanır. En yaygın kullanılan HTTP   metodları şunlardır:
+
+  `GET` : Sunucudan veri almak için kullanılır. Örneğin bir web sayfasını görüntülemek.
+
+  `POST`: Sunucuya veri göndermek için kullanılır. Örneğin bir formu doldurup göndermek.
+
+  `PUT`: Sunucudaki mevcut veriyi güncellemek için kullanılır.
+
+  `DELETE`: Sunucudaki veriyi silmek için kullanılır.
 
 </details>
 
