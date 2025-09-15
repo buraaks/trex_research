@@ -81,9 +81,9 @@ Trex Dijital Akıllı Üretim Sistemleri A.Ş
 
 **o	Agile/Scrum/Kanban metodolojileri**
 
- * Agile: Yazılımı küçük parçalara bölerek hızlı ve esnek şekilde geliştirmeyi amaçlayan yaklaşım.
+ * Agile: Yazılımı küçük parçalara bölerek , hızlı ve esnek şekilde geliştirmeyi amaçlayan yaklaşım.
 
- * Scrum: Agile içinde, işleri sabit süreli sprint’lere ayırarak ekip çalışmasını yöneten bir çerçeve.
+ * Scrum: Agile içinde, işleri sabit süreli sprint’lere (kısa süreli çalışma periyodu) ayırarak ekip çalışmasını yöneten bir çerçeve.
 
  * Kanban: İşlerin görsel bir panoda sürekli akışla yönetildiği, esnek bir Agile yöntemi.
 
@@ -94,6 +94,8 @@ Trex Dijital Akıllı Üretim Sistemleri A.Ş
 ## 2. NET Ekosistemi
 
 <details><summary>-	.NET nedir? Tarihçesi, amacı, neden kullanılır?</summary>
+     
+**- .NET** microsoft tarafından geliştirilen bir yazılım geliştirme platformudur.2002 yılında piyasaya sürülmüştür . Amacı farklı yazılım dillerini bir araya getirerek yazılım geliştirmeyi kolaylaştırmaktır.Web , masaüstü ve mobil uygulamalar gibi çeşitli alanlarda kullanlıabilir.
 
 </details>
 
