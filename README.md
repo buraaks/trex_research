@@ -129,7 +129,7 @@ Trex Dijital Akıllı Üretim Sistemleri A.Ş
 
    C# dilinde `=>` operatörü, lambda ifadelerini tanımlamak için kullanılır. Lambda ifadeleri, isimsiz metodlar oluşturmak için kullanılır ve genellikle kısa, tek satırlık işlemler için tercih edilir.
 
-   `=>` operatörü kullanarak girilen değerin karesini alma:
+   `=>` operatörü kullanarak girilen değerin karesini alma, örnek kod:
    
 `
 Console.Write("Bir sayı girin: ");
@@ -138,7 +138,6 @@ Func<int, int> kareAl = x => x * x;
 Console.WriteLine($"{x} sayısının karesi: {kareAl(x)}");
 `
 
-
 </details>
 
 ***
@@ -146,9 +145,54 @@ Console.WriteLine($"{x} sayısının karesi: {kareAl(x)}");
 
 <details><summary>-	Backend nedir? Frontend ile farkları</summary>
 
+o Frontend Nedir?
+
+Frontend, kullanıcının doğrudan etkileşimde bulunduğu web sitesinin görsel ve işlevsel yüzüdür.
+
+* Kapsadığı Teknolojiler:
+
+  -HTML – Sayfa iskeleti
+
+  -CSS – Stil ve düzen
+
+  -JavaScript – Dinamik etkileşimler
+
+
+o Backend Nedir?
+
+Backend, sistemin sunucu tarafında çalışan, kullanıcının görmediği ama tüm işlevselliği sağlayan kısmıdır.
+
+* Kapsadığı Teknolojiler:
+
+   -Programlama dilleri: Python, PHP, Ruby, Java, C#
+
+   -Veritabanları: MySQL, PostgreSQL, MongoDB
+
+   -Frameworkler: Laravel, Django, Spring, ASP.NET
+
+
 </details>
 
 <details><summary>-	Web sunucusu nedir? API nedir? API türleri</summary>
+
+o Web Sunucusu Nedir?
+ Web sunucusu, HTTP isteklerini alıp yanıtlayan bir yazılım veya donanım sistemidir. Temel görevi, istemciden (genellikle bir tarayıcıdan) gelen isteğe karşılık olarak web sayfası, veri veya dosya sunmaktır.
+
+ * Örnek Web Sunucuları:
+
+  -Apache
+
+  -Nginx
+
+  -Microsoft IIS
+
+* Görevleri:
+* 
+-İstemciden gelen HTTP/HTTPS isteklerini dinlemek
+
+-İlgili dosyaları (HTML, CSS, JS) sunmak
+
+-Dinamik içerik için backend uygulamalarla iletişim kurmak
 
 </details>
 
