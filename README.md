@@ -113,11 +113,31 @@ Trex Dijital Akıllı Üretim Sistemleri A.Ş
 |Modern API Desteği  |Kısıtlı         |Geniş                  |Geniş                  |
 </details>
 
-<details><summary>-	Platformlar arası çalışabilir mi? (Windows, Linux, macOS)</summary>
+<details><summary>•	Senkron ve Asenkron Programlama</summary>
+
+**Senkron Programlama:** İşlemler sırasıyla gerçekleşir. Genllikle daha basit ve anlaşılırdır ancak uzun süren işlemlerde kullanıcı deneyimini olumsuz etkileyebilir.
+
+**Asenkron Programlama:** İşlemler aynı anda veya birbirinden bağımsız çalışabilir.Uzun süren işlemler arka planda yürütülürken kullanıcı arayüzü yanıt vermeye devam eder.
+
+- **Anahtar Kavramlar:**
+`async` : Bir metodun asenkron olduğunu belirtir , bu metod `await` ile çağırabilir.
+`await` : Asenkron bir işlemin tamamlanmasını beklerken kontrolü çağıran metoda geri verir.
+`Task` : .NET'te asenkron işlemleri temsil eden bir türdür. Bir işlemin gelecekte tamamlanacağını ifade eder. Örneğin, bir dosya okuma işlemi `Task<string>` dönebilir. `Task nesnesi`, işlem tamamlandığında sonucu sağlar.
 
 </details>
+<details><summary>• arrow function (=>) ifadesinin C#’taki yeri</summary>
 
-<details><summary>•	Senkron ve Asenkron Programlama</summary>
+   C# dilinde `=>` operatörü, lambda ifadelerini tanımlamak için kullanılır. Lambda ifadeleri, isimsiz metodlar oluşturmak için kullanılır ve genellikle kısa, tek satırlık işlemler için tercih edilir.
+
+   `=>` operatörü kullanarak girilen değerin karesini alma:
+   
+`
+Console.Write("Bir sayı girin: ");
+int x = Convert.ToInt32(Console.ReadLine());
+Func<int, int> kareAl = x => x * x;
+Console.WriteLine($"{x} sayısının karesi: {kareAl(x)}");
+`
+
 
 </details>
 
