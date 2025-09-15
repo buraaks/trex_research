@@ -100,7 +100,17 @@ Trex Dijital Akıllı Üretim Sistemleri A.Ş
 </details>
 
 <details><summary>-	.NET Framework, .NET Core ve .NET 7/8+ farkları</summary>
-
+     
+|Özellik             | .NET Framework | .NET Core             | .NET                  |
+|--------------------|----------------|-----------------------|-----------------------|
+|Platform            |Windows         |Windows, Linux, macOS  |Windows, Linux, macOS  |
+|Açık Kaynak         |Hayır           |Evet                   |Evet                   |
+|Performans          |Orta            |Yüksek                 |Çok Yüksek             |
+|Modülerlik          |Monolitik       |Modüler                |Modüler                |
+|Güncelleme Desteği  |Sınırlı         |Aktif                  |Sürekli                |
+|Microservis Desteği |Zayıf           |Güçlü                  |Güçlü                  |
+|Bulut Uygulamları   |Kısıtlı         |Uygun                  |Uygun                  |
+|Modern API Desteği  |Kısıtlı         |Geniş                  |Geniş                  |
 </details>
 
 <details><summary>-	Platformlar arası çalışabilir mi? (Windows, Linux, macOS)</summary>
