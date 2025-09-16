@@ -467,10 +467,40 @@ app.Use(async (context, next) =>
     Console.WriteLine("Yanıt gönderiliyor.");
 });
 ```
--Bu örnekte, gelen isteği loglayan bir middleware tanımlanmış. next.Invoke() çağrısı ile zincirdeki bir sonraki middleware çalıştırılıyor, ardından yanıt sürecinde işlem yapılabiliyor.
+   -Bu örnekte, gelen isteği loglayan bir middleware tanımlanmış. next.Invoke() çağrısı ile zincirdeki bir sonraki middleware çalıştırılıyor, ardından yanıt sürecinde işlem yapılabiliyor.
 </details>
 
 <details><summary>-	Dependency Injection (DI) nedir, neden önemlidir?</summary>
+
+* DI Nedir?
+
+   -Dependency Injection (DI), yazılım geliştirmede bir sınıfın ihtiyaç duyduğu nesneleri kendisi oluşturmak yerine dışarıdan almasını sağlayan bir tasarım desenidir. Bu yaklaşım, kodun daha modüler, test edilebilir ve bakımı kolay olmasını sağlar.
+
+   -Bir sınıfın bağımlı olduğu diğer sınıfları doğrudan oluşturmak yerine, bu bağımlılıkların enjekte edilmesi prensibine dayanır.
+
+   -Örneğin bir OrderService sınıfı, EmailSender gibi bir servise ihtiyaç duyuyorsa, onu new ile oluşturmak yerine dışarıdan alır.
+
+```
+public class OrderService
+{
+    private readonly IEmailSender _emailSender;
+
+    public OrderService(IEmailSender emailSender)
+    {
+        _emailSender = emailSender;
+    }
+}
+```
+   -Bu örnekte OrderService, IEmailSender bağımlılığını dışarıdan alır—yani bağımlılık enjekte edilir.
+
+   * Neden Önemlidir?
+     -Gevşek bağlılık (Loose Coupling): Sınıflar birbirine sıkı sıkıya bağlı olmaz, böylece bir bileşen değiştiğinde diğerleri etkilenmez.
+
+     -Test kolaylığı: Mock veya sahte nesnelerle birim testler kolayca yazılabilir.
+
+     -Yeniden kullanılabilirlik: Aynı sınıf farklı bağımlılıklarla tekrar kullanılabilir.
+
+     -Bakım kolaylığı: Bağımlılıklar merkezi olarak yönetildiği için sistemin bakımı daha kolay ve güvenlidir.
 
 </details>
 
