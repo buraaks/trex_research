@@ -30,7 +30,7 @@ Trex Dijital Akıllı Üretim Sistemleri A.Ş
      Git, yazılım projelerindeki tüm değişiklikleri kaydedip yönetmeye yarayan bir versiyon kontrol sistemi iken; GitHub, bu Git projelerini internet üzerinde depolamayı, paylaşmayı ve işbirliği yapmayı sağlayan bulut tabanlı bir platformdur.
  	</details>
 <details><summary>- Temel Git komutları</summary>
-ali was here
+
 `git init` → Yeni bir Git deposu (proje) başlatır.
 
 `git clone [url]` →  Var olan bir uzak (remote) depoyu bilgisayarına kopyalar.
