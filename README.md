@@ -358,6 +358,20 @@ Her yaklaşımın avantajları ve kullanım alanları farklıdır. REST genellik
 
 <details><summary>-	JSON veri örneği açıklaması</summary>
 
+```
+{
+  "isim": "Burak",
+  "yas": 29,
+  "ogrenciMi": true,
+  "beceriler": ["JavaScript", "Python", "Markdown"],
+  "adres": {
+    "sehir": "Bursa",
+    "ilce": "Nilüfer",
+    "postaKodu": 16140
+  }
+}
+```
+
 </details>
 
 ***
