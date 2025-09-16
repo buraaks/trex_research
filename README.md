@@ -341,6 +341,19 @@ Her yaklaşımın avantajları ve kullanım alanları farklıdır. REST genellik
 
 <details><summary>-	REST vs SOAP vs GraphQL temel karşılaştırması</summary>
 
+| Özellik / Mimari | REST | SOAP | GraphQL |
+|------------------|------|------|---------|
+| **Tanım** | HTTP üzerinde çalışan, kaynak odaklı mimari stil | XML tabanlı, katı kurallara sahip mesajlaşma protokolü | İstemcinin ihtiyaç duyduğu veriyi tanımlayabildiği sorgu dili |
+| **Veri Formatı** | Genellikle JSON (XML, HTML de olabilir) | Sadece XML | JSON (genellikle), tip sistemi ile |
+| **Uç Nokta (Endpoint)** | Her kaynak için ayrı endpoint | Tek endpoint olabilir ama işlem bazlı SOAP action’lar | Tek endpoint üzerinden tüm sorgular |
+| **Performans** | Basit ve hızlı, ancak fazla veri dönebilir (over-fetching) | XML ve ek protokoller nedeniyle daha yavaş | Gereksiz veri dönmez (over-fetching/under-fetching çözülür) |
+| **Güvenlik** | HTTPS + OAuth/JWT gibi standart yöntemler | WS-Security ile mesaj seviyesinde güvenlik | REST’teki yöntemler + sorgu bazlı yetkilendirme |
+| **Standartlaşma** | Esnek, resmi standart yok (HTTP kuralları dışında) | Katı standartlar (WSDL, XML Schema) | Şema (schema) ile tip güvenliği, resmi sorgu yapısı |
+| **Kullanım Alanı** | Web servisleri, mobil API’ler, mikroservisler | Kurumsal entegrasyonlar, bankacılık, yüksek güvenlik gerektiren sistemler | Modern web ve mobil uygulamalar, veri yoğun istemciler |
+| **Avantajlar** | Basit, yaygın, öğrenmesi kolay, esnek | Güvenli, standart, protokol bağımsız | Esnek veri sorgusu, tek endpoint, az veri transferi |
+| **Dezavantajlar** | Over-fetching/under-fetching olabilir | Karmaşık, ağır, XML zorunluluğu | Öğrenme eğrisi, caching ve rate limit yönetimi daha karmaşık |
+
+
 </details>
 
 <details><summary>-	JSON veri örneği açıklaması</summary>
