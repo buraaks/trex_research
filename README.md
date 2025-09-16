@@ -288,9 +288,54 @@ Bu format sayesinde RESTful servisler, veri alışverişini hızlı ve etkili bi
 
 <details><summary>-	SOAP ve GraphQL nedir, REST’ten farkları</summary>
 
+SOAP (Simple Object Access Protocol):
+
+XML tabanlı bir protokoldür.
+
+Katı kurallara ve standartlara sahiptir.
+
+Güvenlik, hata yönetimi ve işlem bütünlüğü gibi konularda daha kapsamlıdır.
+
+HTTP dışında SMTP gibi farklı protokoller üzerinden de çalışabilir.
+
+Genellikle kurumsal sistemlerde tercih edilir.
+
+* GraphQL:
+
+    -Facebook tarafından geliştirilmiş bir sorgulama dilidir.
+
+    -İstemci, tam olarak ihtiyaç duyduğu veriyi tanımlar ve sadece o veri döner.
+
+    -Tek endpoint üzerinden çalışır.
+
+    -JSON formatında veri döner.
+
+    -REST’e göre daha esnek ve verimli veri çekimi sağlar.
+
+* REST ile Farkları:
+
+    -SOAP, REST’e göre daha karmaşık ve ağırdır; GraphQL ise daha esnek ve hafiftir.
+
+    -REST çoklu endpoint yapısına sahiptir; GraphQL tek endpoint ile çalışır.
+
+    -REST’te sunucu ne döneceğine karar verir; GraphQL’de istemci belirler.
+
+Her yaklaşımın avantajları ve kullanım alanları farklıdır. REST genellikle basit ve hızlı çözümler için tercih edilirken, SOAP daha güvenli ve kurumsal sistemlerde; GraphQL ise veri esnekliği ve performans gerektiren modern uygulamalarda kullanılır.
+
 </details>
 
 <details><summary>-	HTTP metodlarını örneklerle açıklama</summary>
+
+| Metod   | Amaç | Özellikler | Örnek Kullanım |
+|---------|------|------------|----------------|
+| **GET** | Sunucudan veri almak | - URL üzerinden parametre gönderilir<br>- Önbelleğe alınabilir<br>- Tarayıcı geçmişinde saklanır | `GET /products?id=15` |
+| **POST** | Sunucuya veri göndermek (yeni kaynak oluşturmak) | - Veri gövde (body) içinde gönderilir<br>- Önbelleğe alınmaz<br>- Form gönderimlerinde yaygın | `POST /users` + `{ "name": "Burak" }` |
+| **PUT** | Var olan kaynağı tamamen güncellemek veya yoksa oluşturmak | - İdempotent<br>- Tüm veriyi günceller | `PUT /users/5` + `{ "name": "Burak", "age": 30 }` |
+| **PATCH** | Kaynağın belirli alanlarını güncellemek | - Kısmi güncelleme<br>- Daha az veri transferi | `PATCH /users/5` + `{ "age": 31 }` |
+| **DELETE** | Kaynağı silmek | - Geri dönüşsüz olabilir<br>- Yetkilendirme gerektirir | `DELETE /users/5` |
+| **HEAD** | Sadece başlık bilgilerini almak | - Gövde yok<br>- Dosya boyutu, tip gibi bilgileri öğrenmek için | `HEAD /file.zip` |
+| **OPTIONS** | Sunucunun desteklediği metodları öğrenmek | - CORS ön kontrol isteklerinde kullanılır | `OPTIONS /users` → `Allow: GET, POST, PUT, DELETE` |
+
 
 </details>
 
