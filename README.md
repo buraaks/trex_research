@@ -379,9 +379,59 @@ Her yaklaşımın avantajları ve kullanım alanları farklıdır. REST genellik
 
 <details><summary>-	ASP.NET ve ASP.NET Core nedir? Avantajları, farkları</summary>
 
+* ASP.NET Nedir?
+
+   -Microsoft tarafından geliştirilen, .NET Framework üzerinde çalışan bir web uygulama geliştirme platformudur.
+
+   -Genellikle Windows tabanlı sunucularda çalışır.
+
+   -ASP.NET Web Forms, MVC ve Web API gibi farklı mimari yaklaşımları destekler.
+
+   -Daha eski ve olgun bir teknolojidir; kurumsal projelerde hâlâ yaygın olarak kullanılır.
+
+   * ASP.NET Avantajları:
+
+     -Kurumsal projelerde denenmiş ve test edilmiş.
+
+     -Geniş dokümantasyon ve destek.
+
+     -Windows Server ile tam uyum.
+
+* ASP.NET Core Nedir?
+
+   -ASP.NET’in modern, yeniden tasarlanmış versiyonudur.
+
+   -Platform bağımsızdır: Windows, macOS ve Linux üzerinde çalışabilir2.
+
+   -.NET Core veya .NET 5+ ile birlikte gelir; açık kaynaklı ve topluluk desteklidir.
+
+   -Modüler, hafif ve yüksek performanslıdır.
+
+   -Bulut ve mikro hizmet mimarileri için optimize edilmiştir.
+
+     * ASP.NET Core Avantajları:
+
+       -Yüksek performans ve düşük kaynak tüketimi.
+
+       -Platformlar arası geliştirme imkânı.
+
+       -Modern mimariler (MVC, Razor Pages, Blazor, gRPC) ile uyumlu.
+ 
+       -CI/CD ve container ortamlarıyla kolay entegrasyon.
+
+       -Açık kaynak olduğu için sürekli güncelleniyor.
+
 </details>
 
 <details><summary>-	MVC nedir, ne için kullanılır?  </summary>
+
+* MVC (Model–View–Controller), yazılım geliştirmede kullanılan bir mimari desen olup, uygulamayı üç temel bileşene ayırarak daha düzenli, test edilebilir ve sürdürülebilir hale getirir. Senin gibi sistematik düşünen biri için bu yapı, kodun mantıksal bölümlere ayrılması açısından oldukça verimlidir.
+
+|Bileşen|Görevi|
+|-------|------|
+|Model|Verileri temsil eder. Veritabanı işlemleri, iş mantığı ve veri yönetimi burada yapılır|
+|View|Verileri temsil eder. Veritabanı işlemleri, iş mantığı ve veri yönetimi burada yapılır.|
+|Controller|Kullanıcıdan gelen istekleri alır, uygun Model’i çağırır ve sonucu View’a iletir.|
 
 </details>
 
