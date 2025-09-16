@@ -144,40 +144,40 @@ Console.WriteLine($"{x} sayısının karesi: {kareAl(x)}");
 
 <details><summary>-	Backend nedir? Frontend ile farkları</summary>
 
-o Frontend Nedir?
+* __Frontend Nedir?__
 
-Frontend, kullanıcının doğrudan etkileşimde bulunduğu web sitesinin görsel ve işlevsel yüzüdür.
+   Frontend, kullanıcının doğrudan etkileşimde bulunduğu web sitesinin görsel ve işlevsel yüzüdür.
 
-* Kapsadığı Teknolojiler:
+   * __Kapsadığı Teknolojiler__:
 
-  -HTML – Sayfa iskeleti
+     -HTML – Sayfa iskeleti
 
-  -CSS – Stil ve düzen
+     -CSS – Stil ve düzen
 
-  -JavaScript – Dinamik etkileşimler
+     -JavaScript – Dinamik etkileşimler
 
 
-o Backend Nedir?
+* __Backend Nedir?__
 
 Backend, sistemin sunucu tarafında çalışan, kullanıcının görmediği ama tüm işlevselliği sağlayan kısmıdır.
 
-* Kapsadığı Teknolojiler:
+   * __Kapsadığı Teknolojiler__:
 
-   -Programlama dilleri: Python, PHP, Ruby, Java, C#
+     -Programlama dilleri: Python, PHP, Ruby, Java, C#
 
-   -Veritabanları: MySQL, PostgreSQL, MongoDB
-
-   -Frameworkler: Laravel, Django, Spring, ASP.NET
+     -Veritabanları: MySQL, PostgreSQL, MongoDB
+ 
+     -Frameworkler: Laravel, Django, Spring, ASP.NET
 
 
 </details>
 
 <details><summary>-	Web sunucusu nedir? API nedir? API türleri</summary>
 
-o Web Sunucusu Nedir?
+* __Web Sunucusu Nedir?__
  Web sunucusu, HTTP isteklerini alıp yanıtlayan bir yazılım veya donanım sistemidir. Temel görevi, istemciden (genellikle bir tarayıcıdan) gelen isteğe karşılık olarak web sayfası, veri veya dosya sunmaktır.
 
- * Örnek Web Sunucuları:
+ * __Örnek Web Sunucuları__:
 
     -Apache
 
@@ -185,7 +185,7 @@ o Web Sunucusu Nedir?
 
     -Microsoft IIS
 
-* Görevleri:
+* __Görevleri__:
 
    -İstemciden gelen HTTP/HTTPS isteklerini dinlemek
 
@@ -193,19 +193,19 @@ o Web Sunucusu Nedir?
 
    -Dinamik içerik için backend uygulamalarla iletişim kurmak
 
-o API Nedir?
+* __API Nedir?__
 
  API (Application Programming Interface), iki yazılımın birbiriyle standartlaştırılmış bir şekilde iletişim kurmasını sağlayan arayüzdür. Bir nevi yazılımlar arası “protokol” gibi düşünebilirsin.
 
  Gerçek Hayat Analojisi: Bir restoranda garson (API), senin siparişini mutfağa (sunucu) iletir ve yemeği sana getirir.
 
-* Kullanım Alanları:
+  * __Kullanım Alanları__:
 
-    -Mobil uygulamaların sunucudan veri çekmesi
+       -Mobil uygulamaların sunucudan veri çekmesi
 
-    -Web sitelerinin harici servislerle (ödeme, harita, hava durumu) entegrasyonu
+       -Web sitelerinin harici servislerle (ödeme, harita, hava durumu) entegrasyonu
 
-    -Mikroservis mimarilerinde servisler arası iletişim
+       -Mikroservis mimarilerinde servisler arası iletişim
 
 Video: [API nedir? ](https://www.youtube.com/watch?v=nXFI5Cd8FZE&list=PLeZr8VTNC1oZpyWb0azboUg01D5_Wr5I_)
 
@@ -213,7 +213,7 @@ Video: [API nedir? ](https://www.youtube.com/watch?v=nXFI5Cd8FZE&list=PLeZr8VTNC
 
 <details><summary>-	HTTP nedir? HTTP metodları: GET, POST, PUT, DELETE</summary>
 
-o HTTP Nedir?
+* __HTTP Nedir?__
 
 HTTP (Hypertext Transfer Protocol), web tarayıcıları ile sunucular arasında veri alışverişini sağlayan bir iletişim protokolüdür. İnternet üzerindeki sayfaların yüklenmesi, veri gönderimi ve alınması gibi işlemler HTTP üzerinden gerçekleşir.
 
@@ -223,7 +223,7 @@ HTTP (Hypertext Transfer Protocol), web tarayıcıları ile sunucular arasında 
 
 HTTP, metin tabanlı bir protokoldür ve genellikle TCP/IP üzerinden çalışır.
 
-* HTTP Metodları
+* __HTTP Metodları__
 
   -HTTP protokolü, istemcinin sunucuya ne tür bir işlem yapmak istediğini   belirtmek için çeşitli metodlar kullanır. En yaygın kullanılan HTTP   metodları şunlardır:
 
@@ -243,7 +243,7 @@ REST (Representational State Transfer), web servislerinin daha basit, ölçeklen
 
 Kaynak (Resource): Her veri öğesi bir kaynak olarak temsil edilir ve genellikle bir URL ile tanımlanır.
 
-*  HTTP Metodları ile İşlem:
+*  __HTTP Metodları ile İşlem__:
 
    `GET /users` : Tüm kullanıcıları getirir.
 
@@ -253,9 +253,9 @@ Kaynak (Resource): Her veri öğesi bir kaynak olarak temsil edilir ve genellikl
 
    `DELETE /users/1` : ID’si 1 olan kullanıcıyı siler.
 
-* Stateless (Durumsuzluk): Her istekte gerekli tüm bilgiler yer alır; sunucu önceki istekleri hatırlamaz.
+* __Stateless (Durumsuzluk)__: Her istekte gerekli tüm bilgiler yer alır; sunucu önceki istekleri hatırlamaz.
 
-* JSON Formatı: Veri alışverişi genellikle JSON formatında yapılır.
+* __JSON Formatı__: Veri alışverişi genellikle JSON formatında yapılır.
 
 </details>
 
@@ -272,7 +272,7 @@ Dil Bağımsızlığı: JSON, birçok programlama dili tarafından desteklenir.
 
 Veri Yapısı: Anahtar-değer (key-value) çiftleri ve dizi (array) yapıları içerir.
 
-Örnek JSON verisi:
+* __Örnek JSON verisi__:
 
 ```
 {
@@ -288,19 +288,19 @@ Bu format sayesinde RESTful servisler, veri alışverişini hızlı ve etkili bi
 
 <details><summary>-	SOAP ve GraphQL nedir, REST’ten farkları</summary>
 
-SOAP (Simple Object Access Protocol):
+* __SOAP (Simple Object Access Protocol)__:
 
-XML tabanlı bir protokoldür.
+   -XML tabanlı bir protokoldür.
 
-Katı kurallara ve standartlara sahiptir.
+   -Katı kurallara ve standartlara sahiptir.
 
-Güvenlik, hata yönetimi ve işlem bütünlüğü gibi konularda daha kapsamlıdır.
+   -Güvenlik, hata yönetimi ve işlem bütünlüğü gibi konularda daha kapsamlıdır.
 
-HTTP dışında SMTP gibi farklı protokoller üzerinden de çalışabilir.
+   -HTTP dışında SMTP gibi farklı protokoller üzerinden de çalışabilir.
 
-Genellikle kurumsal sistemlerde tercih edilir.
+   -Genellikle kurumsal sistemlerde tercih edilir.
 
-* GraphQL:
+* __GraphQL__:
 
     -Facebook tarafından geliştirilmiş bir sorgulama dilidir.
 
@@ -312,7 +312,7 @@ Genellikle kurumsal sistemlerde tercih edilir.
 
     -REST’e göre daha esnek ve verimli veri çekimi sağlar.
 
-* REST ile Farkları:
+* __REST ile Farkları__:
 
     -SOAP, REST’e göre daha karmaşık ve ağırdır; GraphQL ise daha esnek ve hafiftir.
 
@@ -379,7 +379,7 @@ Her yaklaşımın avantajları ve kullanım alanları farklıdır. REST genellik
 
 <details><summary>-	ASP.NET ve ASP.NET Core nedir? Avantajları, farkları</summary>
 
-* ASP.NET Nedir?
+* __ASP.NET Nedir?__
 
    -Microsoft tarafından geliştirilen, .NET Framework üzerinde çalışan bir web uygulama geliştirme platformudur.
 
@@ -397,7 +397,7 @@ Her yaklaşımın avantajları ve kullanım alanları farklıdır. REST genellik
 
      -Windows Server ile tam uyum.
 
-* ASP.NET Core Nedir?
+* __ASP.NET Core Nedir?__
 
    -ASP.NET’in modern, yeniden tasarlanmış versiyonudur.
 
@@ -409,7 +409,7 @@ Her yaklaşımın avantajları ve kullanım alanları farklıdır. REST genellik
 
    -Bulut ve mikro hizmet mimarileri için optimize edilmiştir.
 
-     * ASP.NET Core Avantajları:
+     * __ASP.NET Core Avantajları__:
 
        -Yüksek performans ve düşük kaynak tüketimi.
 
@@ -427,7 +427,7 @@ Her yaklaşımın avantajları ve kullanım alanları farklıdır. REST genellik
 
 <details><summary>-	MVC nedir, ne için kullanılır?  </summary>
 
-* MVC (Model–View–Controller), yazılım geliştirmede kullanılan bir mimari desen olup, uygulamayı üç temel bileşene ayırarak daha düzenli, test edilebilir ve sürdürülebilir hale getirir. Senin gibi sistematik düşünen biri için bu yapı, kodun mantıksal bölümlere ayrılması açısından oldukça verimlidir.
+* __MVC (Model–View–Controller)__, yazılım geliştirmede kullanılan bir mimari desen olup, uygulamayı üç temel bileşene ayırarak daha düzenli, test edilebilir ve sürdürülebilir hale getirir. Senin gibi sistematik düşünen biri için bu yapı, kodun mantıksal bölümlere ayrılması açısından oldukça verimlidir.
 
 |Bileşen|Görevi|
 |-------|------|
@@ -442,14 +442,14 @@ Her yaklaşımın avantajları ve kullanım alanları farklıdır. REST genellik
 
 <details><summary>-	Middleware nedir, nasıl çalışır?</summary>
 
-* Middleware Nedir?
+* __Middleware Nedir?__
    -Middleware, bir uygulamanın istek–yanıt döngüsünde araya girerek işlemler yapmasını sağlar.
 
    -Örneğin: kimlik doğrulama, hata yönetimi, loglama, yönlendirme, önbellekleme gibi görevleri üstlenebilir.
 
    -Her middleware bileşeni, bir pipeline içinde sırayla çalışır ve isteği bir sonraki bileşene iletir veya durdurabilir.
 
-* Nasıl Çalışır?
+* __Nasıl Çalışır?__
    -İstek gelir → Middleware bileşeni isteği alır.
 
    -İşlem yapar → İsteği okur, düzenler veya kontrol eder.
@@ -458,7 +458,7 @@ Her yaklaşımın avantajları ve kullanım alanları farklıdır. REST genellik
 
    -Yanıt döner → Middleware, yanıt üzerinde işlem yapabilir veya doğrudan döndürebilir.
 
-* Örnek Senaryo:
+* __Örnek Senaryo:__
 ```
 app.Use(async (context, next) =>
 {
@@ -472,7 +472,7 @@ app.Use(async (context, next) =>
 
 <details><summary>-	Dependency Injection (DI) nedir, neden önemlidir?</summary>
 
-* DI Nedir?
+* __DI Nedir?__
 
    -Dependency Injection (DI), yazılım geliştirmede bir sınıfın ihtiyaç duyduğu nesneleri kendisi oluşturmak yerine dışarıdan almasını sağlayan bir tasarım desenidir. Bu yaklaşım, kodun daha modüler, test edilebilir ve bakımı kolay olmasını sağlar.
 
@@ -493,7 +493,7 @@ public class OrderService
 ```
    -Bu örnekte OrderService, IEmailSender bağımlılığını dışarıdan alır—yani bağımlılık enjekte edilir.
 
-   * Neden Önemlidir?
+   * __Neden Önemlidir?__
      -Gevşek bağlılık (Loose Coupling): Sınıflar birbirine sıkı sıkıya bağlı olmaz, böylece bir bileşen değiştiğinde diğerleri etkilenmez.
 
      -Test kolaylığı: Mock veya sahte nesnelerle birim testler kolayca yazılabilir.
@@ -505,6 +505,10 @@ public class OrderService
 </details>
 
 <details><summary>-	Katmanlı Mimari (Layered Architecture)</summary>
+
+Katmanlı mimari, yazılım projelerinde sistemsel karmaşıklığı azaltmak, sürdürülebilirliği artırmak ve geliştirme sürecini modülerleştirmek için kullanılan bir yapılandırma yaklaşımıdır. Senin gibi optimizasyon ve sistem tasarımına meraklı biri için bu mimari, hem mantıksal ayrım hem de test edilebilirlik açısından oldukça güçlü bir temel sunar.
+
+* __Katmanlar__: Presentation – Business – Data Access
 
 </details>
 
