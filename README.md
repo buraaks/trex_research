@@ -206,6 +206,9 @@ o API Nedir?
     -Web sitelerinin harici servislerle (ödeme, harita, hava durumu) entegrasyonu
 
     -Mikroservis mimarilerinde servisler arası iletişim
+
+Video: [API nedir? ](https://www.youtube.com/watch?v=nXFI5Cd8FZE&list=PLeZr8VTNC1oZpyWb0azboUg01D5_Wr5I_)
+
 </details>
 
 <details><summary>-	HTTP nedir? HTTP metodları: GET, POST, PUT, DELETE</summary>
@@ -236,9 +239,50 @@ HTTP, metin tabanlı bir protokoldür ve genellikle TCP/IP üzerinden çalışı
 
 <details><summary>-	RESTful servislerin çalışma mantığı</summary>
 
+REST (Representational State Transfer), web servislerinin daha basit, ölçeklenebilir ve standartlara uygun şekilde tasarlanmasını sağlayan bir mimari yaklaşımdır. RESTful servisler, HTTP metodlarını kullanarak kaynaklara erişim sağlar.
+
+Kaynak (Resource): Her veri öğesi bir kaynak olarak temsil edilir ve genellikle bir URL ile tanımlanır.
+
+*  HTTP Metodları ile İşlem:
+
+   `GET /users` : Tüm kullanıcıları getirir.
+
+   `POST /users` : Yeni bir kullanıcı oluşturur.
+
+   `PUT /users/1` : ID’si 1 olan kullanıcıyı günceller.
+
+   `DELETE /users/1` : ID’si 1 olan kullanıcıyı siler.
+
+* Stateless (Durumsuzluk): Her istekte gerekli tüm bilgiler yer alır; sunucu önceki istekleri hatırlamaz.
+
+* JSON Formatı: Veri alışverişi genellikle JSON formatında yapılır.
+
 </details>
 
 <details><summary>-	JSON veri formatı ve kullanım amacı</summary>
+JSON Veri Formatı ve Kullanım Amacı
+
+JSON (JavaScript Object Notation), veri yapılarının kolayca okunabilir ve yazılabilir şekilde temsil edilmesini sağlayan hafif bir veri formatıdır. Özellikle web uygulamalarında istemci ile sunucu arasında veri alışverişi için yaygın olarak kullanılır.
+
+Okunabilirlik: İnsanlar tarafından kolayca okunabilir ve anlaşılabilir.
+
+Hafiflik: XML gibi diğer formatlara göre daha az yer kaplar.
+
+Dil Bağımsızlığı: JSON, birçok programlama dili tarafından desteklenir.
+
+Veri Yapısı: Anahtar-değer (key-value) çiftleri ve dizi (array) yapıları içerir.
+
+Örnek JSON verisi:
+
+```
+{
+  "id": 1,
+  "name": "Ali",
+  "email": "ali@example..com"
+}
+```
+
+Bu format sayesinde RESTful servisler, veri alışverişini hızlı ve etkili bir şekilde gerçekleştirebilir.
 
 </details>
 
