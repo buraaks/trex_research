@@ -421,6 +421,8 @@ Her yaklaşımın avantajları ve kullanım alanları farklıdır. REST genellik
 
        -Açık kaynak olduğu için sürekli güncelleniyor.
 
+* [ASPN.NET e başlamak için tıkla](https://dotnet.microsoft.com/en-us/apps/aspnet)
+
 </details>
 
 <details><summary>-	MVC nedir, ne için kullanılır?  </summary>
@@ -433,10 +435,39 @@ Her yaklaşımın avantajları ve kullanım alanları farklıdır. REST genellik
 |View|Verileri temsil eder. Veritabanı işlemleri, iş mantığı ve veri yönetimi burada yapılır.|
 |Controller|Kullanıcıdan gelen istekleri alır, uygun Model’i çağırır ve sonucu View’a iletir.|
 
+- Ne için kullanılır: MVC, web uygulamalarında kodun mantıksal katmanlara ayrılmasını sağlayarak daha düzenli ve test edilebilir bir yapı sunar.
+
+- Nerelerde kullanılır: ASP.NET, Django, Laravel gibi framework’lerde web, mobil ve masaüstü uygulama geliştirmede yaygın olarak kullanılır.
 </details>
 
 <details><summary>-	Middleware nedir, nasıl çalışır?</summary>
 
+* Middleware Nedir?
+   -Middleware, bir uygulamanın istek–yanıt döngüsünde araya girerek işlemler yapmasını sağlar.
+
+   -Örneğin: kimlik doğrulama, hata yönetimi, loglama, yönlendirme, önbellekleme gibi görevleri üstlenebilir.
+
+   -Her middleware bileşeni, bir pipeline içinde sırayla çalışır ve isteği bir sonraki bileşene iletir veya durdurabilir.
+
+* Nasıl Çalışır?
+   -İstek gelir → Middleware bileşeni isteği alır.
+
+   -İşlem yapar → İsteği okur, düzenler veya kontrol eder.
+
+   -Sonraki bileşene iletir → next() fonksiyonu ile zincirdeki bir sonraki middleware’e geçilir.
+
+   -Yanıt döner → Middleware, yanıt üzerinde işlem yapabilir veya doğrudan döndürebilir.
+
+* Örnek Senaryo:
+```
+app.Use(async (context, next) =>
+{
+    Console.WriteLine("İstek alındı: " + context.Request.Path);
+    await next.Invoke(); // Sonraki middleware'e geç
+    Console.WriteLine("Yanıt gönderiliyor.");
+});
+```
+-Bu örnekte, gelen isteği loglayan bir middleware tanımlanmış. next.Invoke() çağrısı ile zincirdeki bir sonraki middleware çalıştırılıyor, ardından yanıt sürecinde işlem yapılabiliyor.
 </details>
 
 <details><summary>-	Dependency Injection (DI) nedir, neden önemlidir?</summary>
