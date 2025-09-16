@@ -526,6 +526,40 @@ Katmanlı mimari, yazılım projelerinde sistemsel karmaşıklığı azaltmak, s
 
 <details><summary>-	Clean Architecture</summary>
 
+* __Clean Architecture__, bağımlılıkların merkeze doğru değil, merkezden dışa doğru akmasını sağlayan bir yapı kurar. Yani iş mantığı en içte, dış dünya ile ilgili detaylar en dışta yer alır.
+
+| Katman |Göre | Bağımlılık İlişkisi     |
+|----------------|----------|------|
+| **Domain**| Çekirdek iş kuralları, entity’ler, value object’ler, domain event’ler. Framework veya veri tabanı bağımlılığı yoktur. | Hiçbir katmana bağımlı değil.|
+| **Application**| Use case’ler, servisler, CQRS komut/sorgu mantığı, validasyonlar. Domain’i kullanır, dış katmanlara bağımlı değildir. | Sadece Domain’e bağımlı.|
+| **Infrastructure** | Veri tabanı erişimi (EF Core, Dapper), e-posta servisleri, dosya sistemi, dış API entegrasyonları. Application’daki arayüzleri implemente eder. | Application ve Domain’e bağımlı olabilir. |
+| **API (Presentation)** | Kullanıcıya veya istemciye açılan uç noktalar (Controller’lar, View’lar, gRPC servisleri). HTTP isteklerini alır, Application katmanındaki use case’leri çağırır. | Application’a bağımlı.  |
+
+* __Bağımlılıkların Dışa Akması İlkesi (Dependency Rule)__
+   *__Kural__: İç katmanlar (Domain, Application) dış katmanlardan haberdar olmaz.
+
+   *Bağımlılıklar hep dıştan içe doğru tanımlanır.
+
+* __Örneğin__:
+
+   -Domain, veri tabanı teknolojisini bilmez.
+
+   -Application, hangi ORM kullanıldığını bilmez; sadece interface’leri bilir.
+
+   -Infrastructure, Application’daki interface’leri implemente ederek veri tabanı veya servis erişimini sağlar.
+
+* __Avantajı__: Teknoloji veya altyapı değiştiğinde (ör. EF Core → Dapper), iş mantığına dokunmadan sadece Infrastructure katmanını değiştirirsin.
+
+* __Küçük Bir Akış Örneği__
+
+   __-API__ → Kullanıcıdan “Sipariş Oluştur” isteği gelir.
+
+   __-Application__ → CreateOrderHandler çalışır, Domain kurallarını uygular.
+
+   __-Domain__ → Order entity’si iş kurallarına göre oluşturulur.
+
+   __-Infrastructure__ → OrderRepository ile veritabanına kaydedilir.
+
 </details>
 
 ***
