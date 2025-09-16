@@ -510,6 +510,18 @@ Katmanlı mimari, yazılım projelerinde sistemsel karmaşıklığı azaltmak, s
 
 * __Katmanlar__: Presentation – Business – Data Access
 
+|Katman|Görevi|
+|------|------|
+|__Presentation__|Kullanıcı arayüzü içerir.Kullanıcaıdan veri alır ve sonuçları gösterir.|
+|__Business__|İş kurallarını vve uygulama mantığını barındırır.Veriyi işler , doğrular.|
+|__Data Access__|Veritabanı işlemlerini yürütür. ORM veya SQL ile veri okuma/yazma yapar.|
+
+* __Service & Repository Pattern__ , özellikle Business ve Data Access katmanları arasındaki iletişimi daha da soyutlamak için kullanılır:
+
+   *  __Repository Pattern__ , iş mantığını kontrol eden ve dış katmanlarla  veri erişimini soyutlayan bir ara katmandır.
+
+   *  __Repository Pattern__ , veri tabanı işlemlerini merkezi bir yapı altında toplayarak veri erişimini soyutlar ve test edilebilir hale getirir.
+
 </details>
 
 <details><summary>-	Clean Architecture</summary>
