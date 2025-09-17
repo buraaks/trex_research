@@ -654,6 +654,60 @@ Katmanlı mimari, yazılım projelerinde sistemsel karmaşıklığı azaltmak, s
 
 <details><summary>-	ORM nedir? Entity Framework Core nedir?</summary>
 
+* __ORM (Object-Relational Mapping)__, yani Nesne-İlişkisel Eşleme, nesne yönelimli programlama ile ilişkisel veritabanları arasında bir köprü kurar. Amaç, veritabanı tablolarını doğrudan sınıflar ve nesneler gibi kullanabilmektir.
+
+* __Avantajları:__
+    -SQL yazmadan veri işlemleri yapılabilir.
+
+    -Kod daha okunabilir ve sürdürülebilir hale gelir.
+
+    -Veritabanı bağımlılığı azalır.
+
+    -Veri tutarlılığı ve tip güvenliği artar.
+
+```
+
+public class Product {
+    public int Id { get; set; }
+    public string Name { get; set; }
+}
+
+
+```
+
+* __Entity Framework Core Nedir?__
+
+    Entity Framework Core (EF Core), Microsoft’un .NET platformu için geliştirdiği modern bir ORM aracıdır. EF Core, veritabanı işlemlerini C# kodu üzerinden yönetmeni sağlar.
+
+* __Temel Özellikleri:__
+
+    -.NET 5/6/7+ ile uyumlu, çapraz platform desteği (Windows, Linux, macOS).
+
+    -SQL Server, PostgreSQL, MySQL, SQLite gibi birçok veritabanını destekler.
+
+    -LINQ ile güçlü ve tip güvenli sorgulama.
+
+    -Migration sistemi ile veritabanı evrimini yönetme.
+
+    -Code-First ve Database-First yaklaşımlarını destekler.
+
+* __Kullanım Yaklaşımları:__
+
+    - __Code-First__ : Önce C# sınıfları yazılır, EF veritabanını otomatik oluşturur.
+
+    - __Database-First__ :	Mevcut veritabanından sınıflar otomatik olarak üretilir.
+
+* __Migration Örneği:__
+
+```
+
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+
+```
+
+    -Bu komutlar, EF Core’un veritabanı şemasını oluşturmasını ve güncellemesini sağlar.
+
 </details>
 
 <details><summary>-	DbContext nedir, nasıl kullanılır?</summary>
@@ -799,5 +853,7 @@ Katmanlı mimari, yazılım projelerinde sistemsel karmaşıklığı azaltmak, s
 8. destek ve iletişim 
 
 10. tşk
+
+
 
 
