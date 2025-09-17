@@ -570,6 +570,8 @@ Katmanlı mimari, yazılım projelerinde sistemsel karmaşıklığı azaltmak, s
 
 <details><summary>-	SQL nedir? </summary>
 
+* SQL (Structured Query Language), Yapılandırılmış Sorgu Dili anlamına gelir ve ilişkisel veritabanlarıyla etkileşim kurmak için kullanılan standart bir dildir2. Teknik olarak bir programlama dili değil, ancak veri tabanı işlemleri için oldukça güçlü bir sorgulama aracıdır.
+
 * __SQL Ne İşe Yarar?__
 
     -__Veri ekleme:__ Yeni kayıtlar oluşturmak (`INSERT`)    
