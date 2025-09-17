@@ -611,6 +611,45 @@ Katmanlı mimari, yazılım projelerinde sistemsel karmaşıklığı azaltmak, s
 
 <details><summary>-	İlişkisel ve ilişkisel olmayan veri tabanları arasındaki farklar</summary>
 
+* __Yapısal Farklar__
+
+| Özellik            | İlişkisel Veritabanı (SQL)          | İlişkisel Olmayan Veritabanı (NoSQL)         |
+|--------------------|-------------------------------------|----------------------------------------------|
+| Veri Yapısı        | Satır-sütun tabanlı tablolar        | Belge, anahtar-değer, grafik, sütun tabanlı  |
+| Şema (Schema)      | Katı ve önceden tanımlanmış         | Esnek ve dinamik                             |
+| İlişkiler          | JOIN ile güçlü bağlantılar          | Genellikle ilişkisiz, referanslarla bağlanır |
+| Sorgulama Dili     | SQL                                 | JSON tabanlı sorgular veya özel API’ler      |
+
+* __Performans ve Ölçeklenebilirlik__
+
+| Özellik             | SQL                                  | NoSQL                                            |
+|---------------------|--------------------------------------|--------------------------------------------------|
+| Dikey Ölçeklenme    | Genellikle tercih edilir             | Yatay ölçeklenme için daha uygundur              |
+| Veri Tutarlılığı    | ACID kurallarına sıkı bağlılık       | Eventual consistency (sonradan tutarlılık)       |
+| Hızlı Okuma/Yazma   | Karmaşık sorgularda güçlü            | Büyük veri ve gerçek zamanlı uygulamalarda hızlı |
+
+* __Kullanım Senaryoları__
+
+| Senaryo                    | SQL Tercihi                          | NoSQL Tercihi                               |
+|----------------------------|--------------------------------------|---------------------------------------------|
+| Finansal sistemler         | ✅ Veri tutarlılığı kritik           | ❌                                         |
+| Sosyal medya uygulamaları  | ❌                                   | ✅ Gerçek zamanlı veri akışı               |
+| E-ticaret ürün katalogları | ✅ Ürün, sipariş, müşteri ilişkileri | ✅ Dinamik ürün özellikleri                |
+| IoT ve büyük veri analizi  | ❌                                   | ✅ Yüksek hacimli, yapılandırılmamış veri  |
+
+* __Örnek Veritabanları__
+
+    -SQL tabanlı: MySQL, PostgreSQL, Oracle, Microsoft SQL Server
+
+    -NoSQL tabanlı: MongoDB (belge), Redis (anahtar-değer), Cassandra (sütun), Neo4j (graf)
+
+
+* __Hangi Durumda Hangisi?__
+
+    -Veri bütünlüğü ve karmaşık ilişkiler gerekiyorsa → SQL
+
+    -Esneklik, hız ve ölçeklenebilirlik gerekiyorsa → NoSQL
+
 </details>
 
 <details><summary>-	ORM nedir? Entity Framework Core nedir?</summary>
