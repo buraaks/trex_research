@@ -821,56 +821,210 @@ Bu yaklaşımda önce veritabanı tasarlanır, ardından bu şemaya uygun kodlar
 
 </details>
 
-<details><summary>-	Temel SQL sorguları: SELECT, INSERT, UPDATE, DELETE</summary>
-
-</details>
-
 <details><summary>-	LINQ örnekleri ve karşılık gelen SQL açıklamaları</summary>
 
-</details>
+Aşağıda yaygın LINQ sorguları ve bunların SQL karşılıkları örneklenmiştir:
 
+**1. Filtreleme (Where)**
+```csharp
+var result = db.Users.Where(u => u.Age > 18);
+```
+**SQL Karşılığı:**
+```sql
+SELECT * FROM Users WHERE Age > 18;
+```
+
+**2. Sıralama (OrderBy)**
+```csharp
+var result = db.Products.OrderBy(p => p.Price);
+```
+**SQL Karşılığı:**
+```sql
+SELECT * FROM Products ORDER BY Price ASC;
+```
+
+**3. Alan Seçimi (Select)**
+```csharp
+var result = db.Users.Select(u => u.Name);
+```
+**SQL Karşılığı:**
+```sql
+SELECT Name FROM Users;
+```
+
+**4. Gruplama (GroupBy)**
+```csharp
+var result = db.Orders.GroupBy(o => o.CustomerId);
+```
+**SQL Karşılığı:**
+```sql
+SELECT CustomerId, COUNT(*) FROM Orders GROUP BY CustomerId;
+```
+
+**5. Birleştirme (Join)**
+```csharp
+var result = db.Orders.Join(db.Customers,
+   o => o.CustomerId,
+   c => c.Id,
+   (o, c) => new { o.Id, c.Name });
+```
+**SQL Karşılığı:**
+```sql
+SELECT o.Id, c.Name
+FROM Orders o
+INNER JOIN Customers c ON o.CustomerId = c.Id;
+```
+
+**6. İlk Eleman (FirstOrDefault)**
+```csharp
+var result = db.Users.FirstOrDefault(u => u.Email == "test@example.com");
+```
+**SQL Karşılığı:**
+```sql
+SELECT TOP 1 * FROM Users WHERE Email = 'test@example.com';
+```
+
+</details>
 <details><summary>- Code-First vs DB-First karşılaştırması</summary>
 
+| Özellik | Code-First | Database-First |
+|---|---|---|
+| **Başlangıç Noktası** | Kod (C# sınıfları) | Veritabanı şeması |
+| **Kontrol** | Geliştirici odaklı | Veritabanı odaklı |
+| **Esneklik** | Yüksek (kodda değişiklik kolay) | Düşük (şema değişikliği daha zor) |
+| **Versiyon Kontrolü** | Kolay (Migration dosyaları ile) | Zor (Veritabanı script'leri ile) |
+| **Mevcut Veritabanı** | Uyum sağlamak zor olabilir | İdealdir |
+| **Hızlı Geliştirme** | Evet, prototipleme için uygun | Hayır, önce veritabanı tasarımı gerekir |
+| **İdeal Kullanım** | Yeni projeler, Agile metodolojiler | Mevcut veritabanları, kurumsal sistemler |
+
 </details>
+<details><summary>-	4 temel SQL sorgusuna örnek</summary>
 
-<details><summary>-	4 temel SQL sorgusuna örnek
+**1. Veri Ekleme (INSERT)**
+Yeni bir kullanıcı ekler.
+```sql
+INSERT INTO Users (Name, Email) VALUES ('Ali Veli', 'ali.veli@example.com');
+```
 
-</summary>
+**2. Veri Sorgulama (SELECT)**
+Tüm kullanıcıları listeler.
+```sql
+SELECT * FROM Users;
+```
+
+**3. Veri Güncelleme (UPDATE)**
+ID'si 1 olan kullanıcının e-posta adresini günceller.
+```sql
+UPDATE Users SET Email = 'yeni.email@example.com' WHERE Id = 1;
+```
+
+**4. Veri Silme (DELETE)**
+ID'si 1 olan kullanıcıyı siler.
+```sql
+DELETE FROM Users WHERE Id = 1;
+```
+
+</details>
 
 </details>
 
 ***
-## 6. Güvenlik ve Performans 
+## 6. Güvenlik ve Performans
 
 <details><summary>-	Authentication vs Authorization nedir?</summary>
 
-</details>
+*   **Authentication (Kimlik Doğrulama):** "Sen kimsin?" sorusunun cevabıdır. Bir kullanıcının kimliğini (genellikle kullanıcı adı ve şifre ile) doğrulama işlemidir. Başarılı olursa, sistem kullanıcıyı tanır.
 
-<details><summary>-	Authentication vs Authorization nedir?</summary>
+*   **Authorization (Yetkilendirme):** "Ne yapabilirsin?" sorusunun cevabıdır. Kimliği doğrulanmış bir kullanıcının hangi kaynaklara erişebileceğini veya hangi işlemleri yapabileceğini belirleyen kurallar bütünüdür.
 
-</details>
-
-<details><summary>-	OAuth, OAuth2.0, OpenIddict, OpenID nedir? Aralarındaki </summary>
-
-</details>
-
-<details><summary>-	Performans artımı için ne yapılabilir? (AsNoTracking, IAsyncEnumerable, caching, profiling, redis)</summary>
+| Özellik | Authentication | Authorization |
+|---|---|---|
+| **Amaç** | Kimliği doğrulamak | İzinleri kontrol etmek |
+| **Süreç** | Kullanıcı kimlik bilgilerini sunar | Sistem, kullanıcının rolüne/izinlerine göre erişimi belirler |
+| **Örnek** | Bir siteye giriş yapmak | Giriş yaptıktan sonra sadece admin panelini görebilmek |
 
 </details>
 
-<details><summary>-	Performans artımı için ne yapılabilir? (AsNoTracking, IAsyncEnumerable, caching, profiling, redis)</summary>
+<details><summary>-	JWT (JSON Web Token) nedir?</summary>
+
+*   **JWT (JSON Web Token)**, iki taraf arasında (genellikle istemci ve sunucu) bilgiyi JSON formatında güvenli bir şekilde aktarmak için kullanılan kompakt ve kendi kendine yeten bir standarttır.
+*   Genellikle kimlik doğrulama ve yetkilendirme süreçlerinde kullanılır. Kullanıcı giriş yaptığında sunucu bir JWT oluşturur, imzalar ve istemciye gönderir. İstemci, sonraki her istekte bu token'ı sunucuya göndererek kimliğini kanıtlar.
+*   Sunucu, token'ın imzasını doğrulayarak geçerliliğini kontrol eder ve veritabanına tekrar tekrar sormak zorunda kalmaz. Bu, sistemleri daha verimli ve durumsuz (stateless) hale getirir.
+
+</details>
+
+<details><summary>-	OAuth, OAuth2.0, OpenID Connect nedir? Aralarındaki farklar</summary>
+
+*   **OAuth (Open Authorization):** Bir kullanıcının, şifresini paylaşmadan, bir uygulamaya başka bir servisteki (ör. Google, Facebook) kaynaklarına sınırlı erişim izni vermesini sağlayan bir **yetkilendirme** protokolüdür. "Bu uygulama benim adıma Google Drive'daki dosyalarıma erişebilir" iznini verir.
+
+*   **OAuth 2.0:** OAuth'un daha basit, esnek ve modern versiyonudur. Web, mobil ve masaüstü uygulamaları için farklı akışlar (flows) tanımlar. Günümüzde standart olarak kullanılır.
+
+*   **OpenID Connect (OIDC):** OAuth 2.0 üzerine inşa edilmiş bir **kimlik doğrulama** katmanıdır. OAuth 2.0 sadece yetkilendirme yaparken, OIDC "kullanıcının kim olduğu" bilgisini de sağlar. Kullanıcı "Google ile Giriş Yap" dediğinde, uygulama OIDC sayesinde kullanıcının temel profil bilgilerini (ID, isim, e-posta) güvenli bir şekilde alır.
+
+*   **Temel Fark:**
+   *   **OAuth 2.0 → Yetkilendirme:** "Ne yapabilirsin?"
+   *   **OpenID Connect → Kimlik Doğrulama:** "Sen kimsin?"
+
+</details>
+
+<details><summary>-	Performans artırımı için ne yapılabilir? (AsNoTracking, IAsyncEnumerable, caching, profiling, redis)</summary>
+
+*   **AsNoTracking():** Entity Framework Core'da, sadece veri okuma amaçlı sorgularda kullanılır. EF Core'un değişiklikleri izlemesini (change tracking) devre dışı bırakarak sorguları hızlandırır ve bellek kullanımını azaltır.
+*   **IAsyncEnumerable:** Büyük veri setlerini işlerken tüm veriyi belleğe yüklemek yerine, veriyi akış (stream) halinde asenkron olarak işlemeyi sağlar. Bu, bellek tüketimini ciddi ölçüde düşürür.
+*   **Caching (Önbellekleme):** Sık erişilen ve nadiren değişen verileri bellekte (In-Memory Cache) veya Redis gibi hızlı bir depoda saklayarak veritabanı yükünü azaltır.
+*   **Profiling:** Uygulamanın performansını analiz etmek için kullanılan bir tekniktir. Hangi kod parçalarının yavaş çalıştığını, nerede bellek sızıntısı olduğunu veya hangi veritabanı sorgularının verimsiz olduğunu tespit etmeyi sağlar.
+*   **Redis:** Hızlı, anahtar-değer (key-value) tabanlı bir In-Memory veritabanıdır. Genellikle caching, oturum yönetimi (session management) ve mesaj kuyrukları (message queue) için kullanılır.
 
 </details>
 
 <details><summary>-	JWT yapısının temel bileşenleri</summary>
 
+Bir JWT, `.` ile ayrılmış üç bölümden oluşur: **Header**, **Payload** ve **Signature**.
+
+`aaaaaa.bbbbbb.cccccc`
+
+1.  **Header (Başlık):**
+   *   Token'ın tipini (`typ`: "JWT") ve kullanılan imzalama algoritmasını (`alg`: "HS256" gibi) içerir.
+   *   Base64Url formatında kodlanır.
+   *   Örnek: `{"alg": "HS256", "typ": "JWT"}`
+
+2.  **Payload (Veri Yükü):**
+   *   Token ile taşınacak olan verileri (claims) içerir. Kullanıcı ID'si, rolü, token'ın geçerlilik süresi gibi bilgiler burada yer alır.
+   *   Base64Url formatında kodlanır.
+   *   Örnek: `{"sub": "12345", "name": "Burak", "role": "Admin", "exp": 1672531199}`
+
+3.  **Signature (İmza):**
+   *   Token'ın bütünlüğünü ve güvenliğini sağlar. Kodlanmış Header ve Payload, gizli bir anahtar (secret key) ile birleştirilerek belirtilen algoritma ile imzalanır.
+   *   Sunucu, bu imza sayesinde token'ın yolda değiştirilip değiştirilmediğini anlar.
+
 </details>
-```
+
 <details><summary>-	Performans için önerilen en az 3 teknik ve açıklamaları</summary>
 
+1.  **Caching (Önbellekleme):** Sık erişilen ancak nadiren değişen verileri (örneğin, ürün kategorileri, ayarlar) veritabanından tekrar tekrar çekmek yerine Redis veya MemoryCache gibi hızlı bir depoda saklamaktır. Bu, veritabanı yükünü azaltır ve yanıt sürelerini önemli ölçüde iyileştirir.
+2.  **Asenkron Programlama (Async/Await):** Veritabanı sorguları, dosya işlemleri veya ağ istekleri gibi G/Ç (I/O) bağımlı operasyonları asenkron yaparak uygulamanın ana thread'ini bloke etmeyi önler. Bu sayede uygulama, işlem tamamlanana kadar başka istekleri de yanıtlayabilir ve genel verimlilik artar.
+3.  **Veritabanı Sorgularını Optimize Etme:**
+   *   **`AsNoTracking()` Kullanımı:** Sadece veri listeleme amaçlı sorgularda EF Core'un değişiklik izleme mekanizmasını kapatarak performansı artırır.
+   *   **Doğru İndeksleme (Indexing):** Tablolarda sıkça sorgulanan sütunlara indeks ekleyerek `WHERE`, `JOIN` ve `ORDER BY` gibi operasyonları hızlandırır.
+   *   **Gereksiz Veri Çekmemek (`Select`):** `SELECT *` yerine sadece ihtiyaç duyulan sütunları çekmek, ağ trafiğini ve bellek kullanımını azaltır.
+
 </details>
 
-<details><summary>-	OWASP 10 listesi ve her biri için 1–2 cümlelik açıklamalar</summary>
+<details><summary>-	OWASP Top 10 listesi ve her biri için 1–2 cümlelik açıklamalar</summary>
+
+OWASP Top 10, web uygulamalarındaki en kritik güvenlik risklerini belirten bir listedir. 2021 listesi ve kısa açıklamaları:
+
+1.  **A01: Broken Access Control (Bozuk Erişim Kontrolü):** Kullanıcıların yetkileri dışındaki verilere veya işlevlere erişebilmesidir. Örneğin, normal bir kullanıcının URL'yi değiştirerek admin paneline ulaşması.
+2.  **A02: Cryptographic Failures (Kriptografik Hatalar):** Hassas verilerin (şifreler, kredi kartı bilgileri) zayıf algoritmalarla veya hiç şifrelenmeden saklanması/iletilmesidir.
+3.  **A03: Injection (Enjeksiyon):** Güvenilmeyen kullanıcı girdilerinin, SQL, NoSQL veya komut satırı gibi yerlerde sorgunun bir parçası olarak çalıştırılmasıdır. En bilineni SQL Injection'dır.
+4.  **A04: Insecure Design (Güvensiz Tasarım):** Uygulamanın temel mimarisinde veya tasarımında güvenlik prensiplerinin göz ardı edilmesidir. Bu, sonradan düzeltilmesi zor zafiyetlere yol açar.
+5.  **A05: Security Misconfiguration (Güvenlik Yanlış Yapılandırması):** Sunucu, framework veya veritabanı ayarlarının varsayılan veya güvensiz şekilde bırakılmasıdır. Örneğin, hata mesajlarının detaylı bilgi sızdırması.
+6.  **A06: Vulnerable and Outdated Components (Zafiyetli ve Güncel Olmayan Bileşenler):**
+Kullanılan kütüphane veya framework'lerin güncel olmayan ve bilinen güvenlik zafiyetleri içeren versiyonlarını kullanmaktır.
+7.  **A07: Identification and Authentication Failures (Kimlik Tanıma ve Doğrulama Hataları):** Zayıf parola politikaları, oturum yönetimindeki hatalar veya çok faktörlü kimlik doğrulamanın eksikliği gibi zafiyetlerdir.
+8.  **A08: Software and Data Integrity Failures (Yazılım ve Veri Bütünlüğü Hataları):** Yazılım güncellemelerinin veya CI/CD pipeline'larının güvenliğinin sağlanmaması sonucu kodun veya verinin manipüle edilmesidir.
+9.  **A09: Security Logging and Monitoring Failures (Güvenlik Kayıt ve İzleme Hataları):** Saldırı girişimlerinin veya şüpheli aktivitelerin yeterince kayıt altına alınmaması ve izlenmemesidir.
+10. **A10: Server-Side Request Forgery (SSRF - Sunucu Taraflı İstek Sahteciliği):** Saldırganın, sunucunun kendisi adına başka sistemlere (genellikle iç ağdaki) istekler yapmasını sağlamasıdır.
 
 </details>
 
@@ -879,25 +1033,141 @@ Bu yaklaşımda önce veritabanı tasarlanır, ardından bu şemaya uygun kodlar
 
 <details><summary>-	Neden loglama yapılır? Log seviyesi nedir?</summary>
 
+*   **Neden Loglama Yapılır?**
+   *   **Hata Tespiti:** Uygulamada oluşan hataların nedenini ve kaynağını bulmak için.
+   *   **Performans İzleme:** Hangi işlemlerin ne kadar sürdüğünü analiz etmek için.
+   *   **Güvenlik Denetimi:** Kimin, ne zaman, ne yaptığını takip etmek ve şüpheli aktiviteleri tespit etmek için.
+   *   **Kullanıcı Davranış Analizi:** Kullanıcıların uygulamayı nasıl kullandığını anlamak için.
+
+*   **Log Seviyesi Nedir?**
+   *   Bir log kaydının önem derecesini belirten bir kategoridir. Bu seviyeler, logları filtrelemeyi ve sadece istenen önemdeki mesajları görmeyi sağlar. Yaygın seviyeler: `Trace`, `Debug`, `Information`, `Warning`, `Error`, `Critical`.
+
 </details>
 
 <details><summary>-	ASP.NET Core'da logging altyapısı</summary>
+
+*   ASP.NET Core, `Microsoft.Extensions.Logging` kütüphanesi aracılığıyla yerleşik ve genişletilebilir bir loglama altyapısı sunar.
+*   **`ILogger<T>` Arayüzü:** Loglama işlemleri, Dependency Injection ile alınan `ILogger<T>` nesnesi üzerinden yapılır. `T`, loglamanın yapıldığı sınıfı temsil eder.
+*   **Log Sağlayıcıları (Providers):** Logların nereye yazılacağını belirler. Varsayılan olarak Console, Debug, EventSource gibi sağlayıcılar gelir. Serilog, NLog gibi üçüncü parti sağlayıcılar da kolayca entegre edilebilir.
+*   **Yapılandırma:** `appsettings.json` dosyası üzerinden hangi log seviyelerinin hangi kaynaklar için aktif olacağı kolayca yapılandırılabilir.
 
 </details>
 
 <details><summary>-	Global exception handling nasıl yapılır?</summary>
 
+*   Global exception handling (merkezi hata yönetimi), uygulama genelinde yakalanmamış tüm istisnaları (unhandled exceptions) tek bir yerden yönetmek için kullanılır.
+*   Bu, ASP.NET Core'da bir **Middleware** kullanılarak yapılır. `Program.cs` (veya `Startup.cs`) dosyasında `app.UseExceptionHandler()` middleware'i pipeline'a eklenir.
+*   Bu middleware, bir hata oluştuğunda isteği belirtilen bir hata endpoint'ine yönlendirir. Bu endpoint, kullanıcıya standart bir hata mesajı dönerken, hatanın detaylarını loglayabilir. Bu sayede `try-catch` bloklarından kaçan hatalar bile kontrol altına alınır.
+
 </details>
 
 <details><summary>-	UseExceptionHandler ve ILogger nasıl kullanılır?</summary>
+
+1.  **`UseExceptionHandler` Kullanımı:** `Program.cs` dosyasında, pipeline'ın en başına yakın bir yere eklenir.
+   ```csharp
+   // Program.cs
+   var app = builder.Build();
+
+   if (app.Environment.IsDevelopment())
+   {
+      app.UseDeveloperExceptionPage(); // Geliştirme ortamında detaylı hata sayfası
+   }
+   else
+   {
+      app.UseExceptionHandler("/Error"); // Üretim ortamında merkezi hata yönetimi
+      app.UseHsts();
+   }
+   // ... diğer middleware'ler
+   app.Run();
+   ```
+   `/Error` endpoint'i, hatayı işleyecek olan Razor Page veya Controller'ı temsil eder.
+
+2.  **`ILogger` Kullanımı:** Bir servis veya controller içinde Dependency Injection ile talep edilir ve hata yakalandığında kullanılır.
+   ```csharp
+   public class MyController : ControllerBase
+   {
+      private readonly ILogger<MyController> _logger;
+
+      public MyController(ILogger<MyController> logger)
+      {
+         _logger = logger;
+      }
+
+      [HttpGet]
+      public IActionResult Get()
+      {
+         try
+         {
+            throw new InvalidOperationException("Bu bir test hatası!");
+         }
+         catch (Exception ex)
+         {
+            _logger.LogError(ex, "Get metodunda bir hata oluştu.");
+            return StatusCode(500, "Sunucuda bir hata oluştu.");
+         }
+      }
+   }
+   ```
 
 </details>
 
 <details><summary>-	Log seviyelerinin açıklamaları (Information, Warning, Error vs.)</summary>
 
+| Seviye | Açıklama | Örnek Kullanım |
+|---|---|---|
+| **Trace** | En detaylı log seviyesi. Kod akışını adım adım izlemek için kullanılır. Genellikle sadece geliştirme sırasında aktiftir. | `Metoda girildi. Parametre: x=5` |
+| **Debug** | Geliştirme ve hata ayıklama sırasında faydalı olan bilgiler. | `Veritabanı sorgusu oluşturuldu: SELECT * FROM ...` |
+| **Information** | Uygulamanın genel akışını gösteren bilgilendirici mesajlar. | `Kullanıcı girişi başarılı. UserID: 123` |
+| **Warning** | Beklenmedik veya anormal ancak uygulamanın çalışmasını engellemeyen durumlar. | `API yanıtı beklenenden yavaş geldi (3000ms).` |
+| **Error** | Uygulamanın mevcut işlemini durduran ancak uygulamanın tamamını çökertmeyen hatalar. | `Veritabanına kayıt eklenemedi.` |
+| **Critical** | Uygulamanın çökmesine veya tamamen durmasına neden olabilecek ciddi hatalar. | `Veritabanı bağlantısı tamamen koptu.` |
+
 </details>
 
 <details><summary>-	Örnek hata yönetim kodu açıklaması</summary>
+
+Aşağıdaki kod, ASP.NET Core'da özel bir hata yönetim middleware'i oluşturma örneğidir. Bu middleware, uygulama genelindeki tüm hataları yakalar, loglar ve istemciye standart bir JSON yanıtı döner.
+
+```csharp
+// ExceptionHandlingMiddleware.cs
+public class ExceptionHandlingMiddleware
+{
+   private readonly RequestDelegate _next;
+   private readonly ILogger<ExceptionHandlingMiddleware> _logger;
+
+   public ExceptionHandlingMiddleware(RequestDelegate next, ILogger<ExceptionHandlingMiddleware> logger)
+   {
+      _next = next;
+      _logger = logger;
+   }
+
+   public async Task InvokeAsync(HttpContext context)
+   {
+      try
+      {
+         await _next(context); // Sonraki middleware'i çağır
+      }
+      catch (Exception ex)
+      {
+         _logger.LogError(ex, "Beklenmedik bir hata oluştu.");
+
+         context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+         context.Response.ContentType = "application/json";
+         var errorResponse = new { message = "Sunucuda beklenmedik bir hata oluştu. Lütfen daha sonra tekrar deneyin." };
+         await context.Response.WriteAsJsonAsync(errorResponse);
+      }
+   }
+}
+
+// Program.cs içinde middleware'i ekleme
+app.UseMiddleware<ExceptionHandlingMiddleware>();
+```
+**Açıklama:**
+1.  `InvokeAsync` metodu, pipeline'daki bir sonraki adımı `try-catch` bloğu içinde çalıştırır.
+2.  Eğer bir hata (`Exception`) yakalanırsa:
+   *   Hatanın detayı `ILogger` ile loglanır.
+   *   İstemciye `500 Internal Server Error` durum kodu gönderilir.
+   *   Hata detayı sızdırılmadan, kullanıcı dostu standart bir JSON mesajı döndürülür.
 
 </details>
 
@@ -905,53 +1175,98 @@ Bu yaklaşımda önce veritabanı tasarlanır, ardından bu şemaya uygun kodlar
 ***
 ## 8. Yazılım Geliştirme Prensipleri
 
-
-
-
 <details><summary>-	SOLID prensipleri: Her biri için kısa açıklama ve örnek</summary>
+
+*   **S - Single Responsibility Principle (Tek Sorumluluk Prensibi):** Bir sınıfın veya modülün değişmesi için sadece tek bir nedeni olmalıdır.
+   *   **Örnek:** Bir `UserService` sınıfı hem kullanıcıyı veritabanına kaydetmemeli hem de kullanıcıya e-posta göndermemelidir. E-posta gönderme işi ayrı bir `EmailService` sınıfına verilmelidir.
+*   **O - Open/Closed Principle (Açık/Kapalı Prensibi):** Yazılım varlıkları (sınıflar, modüller) genişletmeye açık, ancak değiştirmeye kapalı olmalıdır.
+   *   **Örnek:** Farklı ödeme tiplerini (kredi kartı, havale) işlemek için `if-else` blokları kullanmak yerine, her ödeme tipi için ortak bir `IPayment` arayüzünü implemente eden sınıflar oluşturulur. Yeni bir ödeme tipi eklemek için mevcut kodu değiştirmek gerekmez.
+*   **L - Liskov Substitution Principle (Liskov'un Yerine Geçme Prensibi):** Alt sınıflar, üst sınıfların yerine herhangi bir sorun yaratmadan kullanılabilmelidir.
+   *   **Örnek:** `Bird` sınıfından türeyen bir `Penguin` sınıfı, `Fly()` metodunu desteklemiyorsa, bu prensibi ihlal eder. Çünkü her `Bird` uçamaz.
+*   **I - Interface Segregation Principle (Arayüz Ayırma Prensibi):** Bir sınıfa, kullanmadığı metotları içeren "şişman" bir arayüz implemente etmeye zorlanmamalıdır.
+   *   **Örnek:** `IWorker` arayüzü hem `Work()` hem de `Eat()` metotlarını içeriyorsa, sadece çalışan ama yemek yemeyen bir `Robot` sınıfı `Eat()` metodunu boş bırakmak zorunda kalır. Bunun yerine `IWorkable` ve `IEatable` gibi iki ayrı arayüz oluşturulmalıdır.
+*   **D - Dependency Inversion Principle (Bağımlılığın Tersine Çevrilmesi Prensibi):** Üst seviye modüller, alt seviye modüllere değil; her ikisi de soyutlamalara (arayüzlere) bağlı olmalıdır.
+   *   **Örnek:** Bir `ReportGenerator` sınıfı, doğrudan `PdfExporter` gibi somut bir sınıfa bağlı olmamalıdır. Bunun yerine `IExporter` arayüzüne bağlı olmalı ve `PdfExporter` bu arayüzü implemente etmelidir.
 
 </details>
 
 <details><summary>-	Design Patterns: Singleton, Repository, Factory</summary>
 
+*   **Singleton Pattern (Tek Nesne Deseni):** Bir sınıftan uygulama yaşam döngüsü boyunca sadece tek bir nesne (instance) oluşturulmasını garanti eden bir desendir. Veritabanı bağlantı nesneleri veya loglama servisleri gibi kaynaklar için kullanılır.
+*   **Repository Pattern (Depo Deseni):** Veri erişim mantığını iş mantığından soyutlar. Veritabanı operasyonlarını (`GetAll`, `Add`, `Delete` vb.) merkezi bir arayüz arkasına gizleyerek kodun daha temiz, test edilebilir ve veritabanından bağımsız olmasını sağlar.
+*   **Factory Pattern (Fabrika Deseni):** Nesne oluşturma mantığını bir "fabrika" sınıfına devreder. Hangi somut sınıfın oluşturulacağına dair kararı istemciden alıp, istemcinin sadece bir arayüz üzerinden nesne talep etmesini sağlar. Bu, yeni nesne türleri eklendiğinde istemci kodunu değiştirme ihtiyacını ortadan kaldırır.
+
 </details>
 
 <details><summary>-	Clean Code nedir, neden önemlidir?</summary>
+
+*   **Clean Code (Temiz Kod):** Başka bir geliştirici tarafından kolayca okunabilen, anlaşılabilen, bakımı yapılabilen ve genişletilebilen koddur. Sadece çalışması değil, aynı zamanda basit, zarif ve odaklanmış olmasıdır.
+*   **Neden Önemlidir?**
+   *   **Bakım Kolaylığı:** Kodun büyük bir kısmı okuma ve bakım ile geçer. Temiz kod bu süreci hızlandırır ve maliyeti düşürür.
+   *   **Hata Azaltma:** Anlaşılır kod, daha az hata yapılmasına neden olur ve mevcut hataların daha hızlı bulunmasını sağlar.
+   *   **Takım Çalışması:** Ekip üyelerinin birbirlerinin kodunu kolayca anlamasını ve projeye daha hızlı adapte olmasını sağlar.
+   *   **Genişletilebilirlik:** İyi yapılandırılmış kod, yeni özellikler eklemeyi kolaylaştırır.
 
 </details>
 
 <details><summary>-	Yazılım Mimari Desenleri</summary>
 
+Yazılım mimari desenleri, yazılım sistemlerinin temel yapısını ve bileşenler arasındaki ilişkileri organize etmek için kullanılan, kanıtlanmış çözüm şablonlarıdır.
+
+*   **Layered Architecture (Katmanlı Mimari):** Uygulamayı Presentation, Business ve Data Access gibi mantıksal katmanlara ayırır. Basit ve anlaşılırdır.
+*   **Microservices Architecture (Mikroservis Mimarisi):** Büyük bir uygulamayı, her biri kendi işlevinden sorumlu, bağımsız olarak geliştirilebilen ve dağıtılabilen küçük servislere böler. Ölçeklenebilirlik ve esneklik sağlar.
+*   **Clean Architecture (Temiz Mimari):** Bağımlılıkları merkezden dışa doğru yönlendirerek iş mantığını (Domain) altyapıdan (UI, veritabanı) tamamen soyutlar. Test edilebilirliği ve teknoloji bağımsızlığını en üst düzeye çıkarır.
+*   **Event-Driven Architecture (Olay Güdümlü Mimari):** Sistem bileşenleri, "olaylar" (events) üreterek, yayınlayarak ve bunlara tepki vererek iletişim kurar. Bileşenler arasında gevşek bağlılık (loose coupling) sağlar.
+
 </details>
 
 <details><summary>-	Her SOLID prensibi için kısa örnek</summary>
+
+*   **S:** `User` sınıfı sadece kullanıcı verilerini tutmalı. `SaveUserToDatabase` metodu `UserRepository` sınıfında olmalı.
+*   **O:** `Shape` (şekil) alanını hesaplarken `if (type == "circle")` yerine, `Circle` ve `Square` sınıfları `IShape` arayüzündeki `CalculateArea()` metodunu implemente etmeli.
+*   **L:** Bir `Rectangle` (dikdörtgen) sınıfından türetilen `Square` (kare) sınıfı, genişlik ve yüksekliği ayrı ayrı değiştirmeye izin verirse Liskov'u ihlal edebilir.
+*   **I:** Bir `IPrinter` arayüzü `Print()`, `Scan()`, `Fax()` metotlarını içeriyorsa, sadece yazdırma yapabilen basit bir yazıcı `Scan()` ve `Fax()` metotlarını boş implemente etmek zorunda kalır. Arayüzler ayrılmalıdır.
+*   **D:** `NotificationService` sınıfı, `EmailSender` sınıfına doğrudan bağlı olmamalıdır. `IMessageSender` arayüzüne bağlı olmalı ve `EmailSender` bu arayüzü uygulamalıdır.
 
 </details>
 
 <details><summary>-	En az 2 design pattern açıklaması</summary>
 
+1.  **Repository Pattern:** Bu desen, veri erişim kodunu uygulamanın geri kalanından soyutlamak için bir ara katman oluşturur. Amacı, iş mantığı katmanının (Business Layer) hangi veritabanı teknolojisinin (EF Core, Dapper, vb.) kullanıldığını bilmemesini sağlamaktır. Bu sayede veri erişim mantığı merkezi bir yerde toplanır, test edilmesi kolaylaşır ve veritabanı teknolojisini değiştirmek gerektiğinde sadece Repository katmanını güncellemek yeterli olur.
+2.  **Singleton Pattern:** Bu desen, bir sınıftan yalnızca tek bir örneğin (instance) oluşturulmasını sağlar ve bu örneğe global bir erişim noktası sunar. Özellikle yapılandırma ayarları (configuration manager), loglama servisi veya paylaşılan bir kaynak havuzu gibi uygulama boyunca tek bir durumda kalması gereken nesneler için kullanılır. Bu, kaynak israfını önler ve durum tutarlılığını garanti eder.
+
 </details>
 
 <details><summary>-	Clean Code uygulama örnekleri</summary>
+
+*   **Anlamlı İsimlendirme:**
+   *   **Kötü:** `int d;` // Geçen gün sayısı
+   *   **İyi:** `int elapsedTimeInDays;`
+*   **Kısa ve Odaklanmış Fonksiyonlar:** Bir fonksiyon sadece tek bir iş yapmalıdır.
+   *   **Kötü:** Kullanıcıyı doğrulayan, veritabanına kaydeden ve e-posta gönderen tek bir fonksiyon.
+   *   **İyi:** `ValidateUser()`, `SaveUser()`, `SendWelcomeEmail()` gibi üç ayrı fonksiyon.
+*   **Gereksiz Yorumlardan Kaçınma:** Kod, ne yaptığını kendi kendine anlatmalıdır.
+   *   **Kötü:** `i++; // i'yi bir artır`
+   *   **İyi:** Yorum yerine kodun kendisini anlaşılır kılmak. `user.LoginAttempts++;`
+*   **Magic String ve Number'lardan Kaçınma:** Anlamı belirsiz sabit değerler yerine isimlendirilmiş sabitler (constants) veya enum'lar kullanmak.
+   *   **Kötü:** `if (user.Role == 2)`
+   *   **İyi:** `if (user.Role == UserRoles.Admin)`
 
 </details>
 
 <details><summary>-	Farklı yazılım mimarilerini karşılaştıran bir tablo veya kısa açıklamalar</summary>
 
+| Mimari | Avantajları | Dezavantajları | İdeal Kullanım Alanı |
+|---|---|---|---|
+| **Monolithic (Tek Parça)** | Geliştirmesi ve dağıtması basit, başlangıç için hızlı. | Ölçeklendirmesi zor, teknoloji değişikliği maliyetli, tek bir hata tüm sistemi etkileyebilir. | Küçük ve orta ölçekli, karmaşık olmayan uygulamalar. |
+| **Layered (Katmanlı)** | Sorumlulukların ayrılması, anlaşılır yapı, bakım kolaylığı. | Gereksiz katmanlar performansı düşürebilir, katı yapı esnekliği azaltabilir. | Standart kurumsal uygulamalar, CRUD operasyonları yoğun sistemler. |
+| **Microservices (Mikroservisler)** | Yüksek ölçeklenebilirlik, teknoloji çeşitliliği, bağımsız geliştirme ve dağıtım. | Dağıtık sistem karmaşıklığı, servisler arası iletişim, operasyonel yük. | Büyük, karmaşık ve yüksek trafikli platformlar (örn. Netflix, Amazon). |
+| **Clean Architecture** | Maksimum test edilebilirlik, teknoloji ve altyapıdan bağımsız iş mantığı. | Öğrenme eğrisi yüksek, küçük projeler için fazla karmaşık olabilir. | Uzun ömürlü, karmaşık iş kuralları içeren ve sürekli gelişen sistemler. |
+
 </details>
 
 ---
 
-<details><summary></summary>
-
-</details>
-
-
-6. özellikler
-
-8. destek ve iletişim 
-
-10. tşk
 
 
 
