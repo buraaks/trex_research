@@ -496,7 +496,7 @@ public class OrderService
    -Bu örnekte OrderService, IEmailSender bağımlılığını dışarıdan alır—yani bağımlılık enjekte edilir.
 
    * __Neden Önemlidir?__
-   
+
      -Gevşek bağlılık (Loose Coupling): Sınıflar birbirine sıkı sıkıya bağlı olmaz, böylece bir bileşen değiştiğinde diğerleri etkilenmez.
 
      -Test kolaylığı: Mock veya sahte nesnelerle birim testler kolayca yazılabilir.
@@ -569,6 +569,43 @@ Katmanlı mimari, yazılım projelerinde sistemsel karmaşıklığı azaltmak, s
 ## 5. Veritabanı ve ORM
 
 <details><summary>-	SQL nedir? </summary>
+
+* __SQL Ne İşe Yarar?__
+
+    -__Veri ekleme:__ Yeni kayıtlar oluşturmak (`INSERT`)    
+
+    -__Veri sorgulama:__ Belirli kriterlere göre veri çekmek (`SELECT`)
+
+    -__Veri güncelleme:__ Mevcut kayıtları değiştirmek (`UPDATE`)
+
+    -__Veri silme:__ Kayıtları kaldırmak (`DELETE`)
+
+    -__Veritabanı ve tablo oluşturma:__ Yapıyı tanımlamak (`CREATE`)
+
+    -__Yetkilendirme:__ Kim neye erişebilir, bunu belirlemek (`GRANT`, `REVOKE`)
+
+* SQL’in Temel Bileşenleri
+    -__Tablolar:__ Veriler satır ve sütunlar halinde tutulur.
+
+    -__Sorgular:__ Veritabanına ne yapılacağını söyleyen komutlardır.
+
+    -__İlişkiler:__ Tablolar arasında bağlantılar kurarak veri bütünlüğü sağlanır.
+
+* __Kısa Tarihçesi__
+    -1970’lerde IBM tarafından geliştirildi.
+
+    -Başlangıçta SEQUEL olarak adlandırıldı, sonra SQL olarak kısaltıldı.
+
+    -Oracle, SQL kullanan ilk ticari veritabanı sistemlerinden biri oldu.
+
+* __Nerelerde Kullanılır?__
+    -Web geliştirme (örneğin PHP + MySQL)
+
+    -Veri analizi ve raporlama
+
+    -Uygulama geliştirme
+
+    -Büyük veri sistemleri ve veri ambarları
 
 </details>
 
