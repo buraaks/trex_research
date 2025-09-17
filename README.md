@@ -712,9 +712,67 @@ dotnet ef database update
 
 <details><summary>-	DbContext nedir, nasıl kullanılır?</summary>
 
+* DbContext, Entity Framework Core’un kalbidir diyebiliriz. Veritabanı ile uygulaman arasındaki tüm etkileşimi yöneten sınıftır. Hem Unit of Work hem de Repository desenlerini içinde barındırır, yani veriyi takip eder, değişiklikleri yönetir ve sorguları çalıştırır.
+
+* DbContext, EF Core’un veritabanı işlemlerini yönettiği temel sınıftır. Şu işleri yapar:
+
+    -Veritabanı bağlantısını yönetir.
+
+    -Entity’leri (sınıfları) veritabanı tablolarına eşler.
+
+    -LINQ sorgularını SQL’e çevirir.
+
+    -Değişiklikleri takip eder ve SaveChanges() ile uygular.
+
+    -Migration ve schema yönetimini destekler.
+
+
+  
+
 </details>
 
 <details><summary>-	LINQ nedir? En çok kullanılan LINQ ifadeleri</summary>
+
+* LINQ (Language Integrated Query), C# ve .NET ekosisteminde farklı veri kaynakları üzerinde SQL benzeri sorgular yazmamızı sağlayan güçlü bir sorgulama teknolojisidir2. Avantajı, sorguların doğrudan C# koduna entegre olması, tip güvenliği sağlaması ve farklı veri kaynakları (koleksiyonlar, veritabanları, XML, JSON vb.) üzerinde tek bir sözdizimi ile çalışabilmesidir.
+
+* __En Çok Kullanılan LINQ İfadeleri__
+
+**Where** – Filtreleme yapar  
+`var sonuc = list.Where(x => x.Yas > 18);`
+
+**Select** – Veri projeksiyonu (alan seçme/dönüştürme)  
+`var isimler = list.Select(x => x.Ad);`
+
+**OrderBy** – Artan sıralama  
+`var sirali = list.OrderBy(x => x.Yas);`
+
+**OrderByDescending** – Azalan sıralama  
+`var sirali = list.OrderByDescending(x => x.Yas);`
+
+**GroupBy** – Gruplama  
+`var gruplar = list.GroupBy(x => x.Sehir);`
+
+**Join** – İki koleksiyonu birleştirme  
+`var sonuc = list1.Join(list2, a => a.Id, b => b.Id, (a,b) => new {...});`
+
+**First / FirstOrDefault** – İlk elemanı getirir  
+`var ilk = list.FirstOrDefault();`
+
+**Any** – Koşula uyan eleman var mı kontrolü  
+`bool varMi = list.Any(x => x.Yas > 30);`
+
+**All** – Tüm elemanlar koşulu sağlıyor mu  
+`bool hepsi = list.All(x => x.Aktif);`
+
+**Count** – Eleman sayısı  
+`int adet = list.Count();`
+
+**Distinct** – Tekrarlı kayıtları kaldırır  
+`var farkli = list.Distinct();`
+
+**Take / Skip** – İlk N elemanı al / ilk N elemanı atla  
+`var ilk5 = list.Take(5);`
+
 
 </details>
 
@@ -766,7 +824,7 @@ dotnet ef database update
 <details><summary>-	JWT yapısının temel bileşenleri</summary>
 
 </details>
-
+```
 <details><summary>-	Performans için önerilen en az 3 teknik ve açıklamaları</summary>
 
 </details>
