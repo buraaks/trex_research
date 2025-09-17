@@ -401,7 +401,7 @@ Her yaklaşımın avantajları ve kullanım alanları farklıdır. REST genellik
 
    -ASP.NET’in modern, yeniden tasarlanmış versiyonudur.
 
-   -Platform bağımsızdır: Windows, macOS ve Linux üzerinde çalışabilir2.
+   -Platform bağımsızdır: Windows, macOS ve Linux üzerinde çalışabilir.
 
    -.NET Core veya .NET 5+ ile birlikte gelir; açık kaynaklı ve topluluk desteklidir.
 
