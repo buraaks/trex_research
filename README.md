@@ -443,6 +443,7 @@ Her yaklaşımın avantajları ve kullanım alanları farklıdır. REST genellik
 <details><summary>-	Middleware nedir, nasıl çalışır?</summary>
 
 * __Middleware Nedir?__
+ 
    -Middleware, bir uygulamanın istek–yanıt döngüsünde araya girerek işlemler yapmasını sağlar.
 
    -Örneğin: kimlik doğrulama, hata yönetimi, loglama, yönlendirme, önbellekleme gibi görevleri üstlenebilir.
@@ -450,6 +451,7 @@ Her yaklaşımın avantajları ve kullanım alanları farklıdır. REST genellik
    -Her middleware bileşeni, bir pipeline içinde sırayla çalışır ve isteği bir sonraki bileşene iletir veya durdurabilir.
 
 * __Nasıl Çalışır?__
+
    -İstek gelir → Middleware bileşeni isteği alır.
 
    -İşlem yapar → İsteği okur, düzenler veya kontrol eder.
