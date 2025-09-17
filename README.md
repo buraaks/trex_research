@@ -778,6 +778,45 @@ dotnet ef database update
 
 <details><summary>-	Code-First ve Database-First yaklaşımı nedir?</summary>
 
+* __Code-First Yaklaşımı__
+
+Bu yaklaşımda önce kod yazılır, ardından bu koddan veritabanı otomatik olarak oluşturulur.
+
+   * __Özellikleri__
+       - Sınıflar (class) ve özellikler (property) üzerinden veritabanı şeması tanımlanır.
+       - Migration (göç) sistemiyle veritabanı güncellemeleri yönetilir.
+       - Özellikle test odaklı ve hızlı prototipleme için idealdir.
+
+   * __Avantajları__
+       - Kod odaklı geliştirme sağlar, veritabanı bağımlılığı azalır.
+       - Versiyon kontrolü kolaydır (migration dosyaları sayesinde).
+       - Farklı veritabanlarına geçiş daha esnektir.
+
+   * __Dezavantajları__
+       - Büyük ekiplerde şema değişiklikleri karmaşık hale gelebilir.
+       - Mevcut bir veritabanı varsa uyum sağlamak zor olabilir.
+
+---
+
+* __Database-First Yaklaşımı__
+
+Bu yaklaşımda önce veritabanı tasarlanır, ardından bu şemaya uygun kodlar otomatik olarak üretilir.
+
+   *  __Özellikleri__
+       - Var olan bir veritabanı üzerinden Entity sınıfları oluşturulur.
+       - Visual Studio gibi araçlar .edmx dosyası ile modelleme yapar.
+
+   * __Avantajları__
+       - Mevcut veritabanlarıyla çalışmak için idealdir.
+       - Karmaşık ilişkiler ve büyük veri yapıları daha rahat yönetilir.
+       - GUI üzerinden görsel modelleme yapılabilir.
+
+   * __Dezavantajları__
+       - Kod üzerinde esneklik daha azdır.
+       - Kodun veritabanına bağımlılığı artar.
+       - Sürüm kontrolü ve migration yönetimi daha zordur.
+
+
 </details>
 
 <details><summary>-	Temel SQL sorguları: SELECT, INSERT, UPDATE, DELETE</summary>
