@@ -496,6 +496,7 @@ public class OrderService
    -Bu örnekte OrderService, IEmailSender bağımlılığını dışarıdan alır—yani bağımlılık enjekte edilir.
 
    * __Neden Önemlidir?__
+   
      -Gevşek bağlılık (Loose Coupling): Sınıflar birbirine sıkı sıkıya bağlı olmaz, böylece bir bileşen değiştiğinde diğerleri etkilenmez.
 
      -Test kolaylığı: Mock veya sahte nesnelerle birim testler kolayca yazılabilir.
