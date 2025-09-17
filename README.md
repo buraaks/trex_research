@@ -706,7 +706,7 @@ dotnet ef database update
 
 ```
 
-    -Bu komutlar, EF Core’un veritabanı şemasını oluşturmasını ve güncellemesini sağlar.
+ -Bu komutlar, EF Core’un veritabanı şemasını oluşturmasını ve güncellemesini sağlar.
 
 </details>
 
