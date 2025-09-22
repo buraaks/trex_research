@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://trex.com.tr/en/">
+<a href="https://trex.com.tr/tr/">
 <img src="https://trex.com.tr/assets/img/logo.png"
 alt="Trex Logo"
 width="300" height="100">
