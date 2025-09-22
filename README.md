@@ -7,7 +7,7 @@ width="300" height="100">
 
 </p>
 <p align="center">
-Trex Dijital Akıllı Üretim Sistemleri A.Ş.ş
+Trex Dijital Akıllı Üretim Sistemleri A.Ş
 </p>
 
 ***
